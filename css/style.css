@@ -6,19 +6,26 @@
     margin: 0;
     padding: 0;
     font-family: 'Roboto', sans-serif;
+    line-height: 1.5;
     box-sizing: border-box;
+    overflow-x: hidden;
+    
     
 }
 
 
+
+
 /*----------------------------------------------------Hero Section-------------------------------------------*/
+
+
 
 .hero-section
 {
     width: 100%;
     min-height: 100vh;    
     margin: auto;
-    overflow: hidden;    
+       
 }
 
 .row{
@@ -29,26 +36,131 @@
 }
 
 .hero-col-1{
-    background: #cfcfcf;
+    
     padding: 50px;
     flex-basis: 40%;
     position: relative;
     margin-left: 50px;
+    margin-top: 150px;
 }
 
-.hero-col-2{
-    background: #cfcfcf;
-    flex-basis: 50%;
-    position: relative;
 
+@media(max-width: 700px)
+{
+   
+    .row{
+        margin-top: 10px;
+    }
+
+    .hero-col-1{
+        
+        padding: 20px;
+        flex-basis: 40%;
+        position: relative; 
+        margin-left: 1px;       
+        margin-top: 150px;
+    }
 }
 
+
+/*------------------------------------------------------------Elements--------------------------------------------*/
+
+.element-main .element{
+    
+    position: absolute;
+    z-index: -1;
+}
+
+.element-1{
+    
+    width: 100px;
+    height: 100px;
+    
+    left: 19%;
+    bottom: 20%;
+    animation: spin 10s linear infinite;
+}
+
+.element-1 img{
+    width: 100%;
+}
+
+@keyframes spin {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+
+.element-2{
+    width: 500px;
+    height: 500px;
+    
+    left:2%;
+    bottom: -8%;
+    animation: topBounce 3s ease-in-out infinite;
+}
+
+.element-2 img{
+    width: 100%;
+}
+
+@keyframes topBounce{
+    0%, 100%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(20px);
+    }
+}
+
+.element-3{
+    width: 1100px;
+    height: 1100px;
+    
+    left: 50%;
+    top: -290px;
+}
+
+.element-3 img{
+    width: 100%;
+}
+
+@media(max-width: 700px)
+{
+    .element-1{
+    width: 100px;
+    height: 100px;
+    
+    left: 8%;
+    bottom: 8%;
+        
+    }
+    .element-2{
+        width: 400px;
+        height: 400px;
+        
+        left:-23%;
+        bottom: -22%;
+    }
+
+    .element-3{
+    width: 800px;
+    height: 800px;
+    
+    left: 50%;
+    top: -290px;
+    }
+}
 
 /*----------------------------------------------------Stages Section-------------------------------------------*/
 
 
 .stages-section{    
-    width: 100%;
+    width: 80%;
     min-height: 85vh;    
     margin: auto;
     padding-top: 100px;
@@ -92,7 +204,7 @@
 /*----------------------------------------------------Service Section-------------------------------------------*/
 
 .service-section{
-    width: 100%;
+    width: 80%;
     min-height: 100vh;
     margin: auto;
     padding-top: 100px;
@@ -107,8 +219,8 @@
 }
 
 .service-col{
-    margin-left: 50px;
-    margin-right: 50px;
+    margin-left: 10px;
+    margin-right: 10px;
     flex-basis: 30%;
     background: #cfcfcf;
 }
