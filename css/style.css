@@ -282,6 +282,19 @@
     flex-basis: 40%;
 }
 
+.volunteer-col-1 h2{
+    font-size: 35px;
+    font-weight: 700;
+    color: #cfcfcf;
+}
+
+.volunteer-col-1 p{
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: 500;
+    color: gray;
+}
+
 /*----------------------------------------------------Volunteer Form-------------------------------------------*/
 
 .volunteer-form{
