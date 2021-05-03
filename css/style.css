@@ -78,6 +78,7 @@
     
     position: absolute;
     z-index: -1;
+    overflow: hidden;
 }
 
 .element-1{
@@ -203,10 +204,21 @@
 }
 
 .stage-col img{
-   width: 150px;  
+   width: 150px; 
+   
+   transition: 0.5s;
+   animation: top-bounce 2s ease-in-out infinite;
    /*background: red;*/
     
     
+}
+@keyframes top-bounce{
+    0%, 100%{
+        transform: translateY(0px);
+    }
+    50%{
+        transform: translateY(5px);
+    }
 }
 
 @media(max-width: 700px)
@@ -289,10 +301,11 @@
 }
 
 .volunteer-col-1 p{
-    margin-top: 10px;
+    /* margin-top: 10px; */
     font-size: 18px;
     font-weight: 500;
     color: gray;
+    /* margin-bottom: 10px; */
 }
 
 /*----------------------------------------------------Volunteer Form-------------------------------------------*/
@@ -384,3 +397,104 @@
     }
 }
 
+/*----------------------------------------------------sign-in-section-------------------------------------------*/
+
+
+.sign-in-section
+{
+    width: 80%;
+    min-height: 100vh;    
+    margin: auto;
+       
+}
+
+.row-sign-in{
+    margin:100px 0;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    
+}
+
+.sign-in-form{
+    width: 40%;
+    padding: 40px;
+}
+
+
+
+.sign-in-form h2{
+    font-size: 30px;
+    color: #353535;
+    font-weight: 500;
+
+}
+
+.sign-in-form .inputBox{
+    position: relative;
+    width: 100%;
+    margin-top: 10px;
+    
+}
+
+
+.sign-in-form .inputBox input
+{
+    width: 100%;
+    padding: 5px 0;
+    font-size: 16px;
+    margin: 10px 0;
+    border: none;
+    border-bottom: 2px solid #cfcfcf;
+    outline: none;
+    resize: none;
+
+}
+
+.sign-in-form .inputBox span{
+    position: absolute;
+    left: 0;
+    
+    padding: 5px 0;
+    font-size: 16px;
+    margin: 10px 0;
+
+    pointer-events: none;
+    transition: 0.5s;
+    color: #353535;
+}
+
+.sign-in-form .inputBox input:focus ~ span,
+.sign-in-form .inputBox input:valid ~ span
+{
+    color: teal;
+    font-size: 12px;
+    transform: translateY(-20px);
+}
+
+.sign-in-form .inputBox input[type="submit"]
+{
+    width: 100px;
+    background: #000000;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 18px;
+}
+
+
+@media(max-width: 700px)
+{
+   
+    .row-sign-in{
+        margin-top: 10px;
+        flex-direction: column;
+    }
+
+    .sign-in-form{
+        width: 90%;
+    }
+
+    
+}
