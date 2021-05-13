@@ -41,10 +41,10 @@
         <!----------------------------------------Stages----------------------------------------------->
 
         <section class="stages-section">
-            <h1>Stages Involved</h1>
-            <p>Its as easy as that</p>
+            <h1 class="slide-in">Stages Involved</h1>
+            <p class="slide-in">Its as easy as that</p>
 
-            <div class="row">
+            <div class="row slide-in">
                 <div class="stage-col">
                     <img src="E:/dev/git_repo/dbms_crud_website/assets/images/stage1.png">
                     <h3>Stage 1</h3>
@@ -69,10 +69,10 @@
         <section class="service-section">
 
            
-            <h1>Our Domains</h1>
-            <p>Over the past few months we've been curating professionals from various domains</p>
+            <h1 class="slide-in">Our Domains</h1>
+            <p class="slide-in">Over the past few months we've been curating professionals from various domains</p>
 
-            <div class="row-services">
+            <div class="row-services slide-in">
                 <div class="service-col">
                     <img src="E:/dev/git_repo/dbms_crud_website/assets/images/uiux.png">
                     <h3>UI UX Design</h3>
@@ -94,7 +94,7 @@
                
             </div>
 
-            <div class="row-services">
+            <div class="row-services slide-in">
                 <div class="service-col">
                     <img src="E:/dev/git_repo/dbms_crud_website/assets/images/logo.png">
                     <h3>Logo Design</h3>
@@ -199,7 +199,29 @@
 
         </section>
         
-        
+        <script type="text/javascript">
+            window.addEventListener('scroll', slideIn);
+    
+            function slideIn(){
+                var slides = document.querySelectorAll('.slide-in');
+            
+    
+            for(var i=0; i<slides.length; i++)
+            {
+                var windowheight = window.innerHeight;
+                var slideto = slides[i].getBoundingClientRect().top;
+                var slidefrom = 150;
+    
+                if(slideto < windowheight - slidefrom){
+                    slides[i].classList.add('active');
+                }
+                else{
+                    slides[i].classList.remove('active');
+                }
+            }
+    
+        }
+            </script>
         
     </body>
 </html>
