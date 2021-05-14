@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -134,50 +136,57 @@
                 <div class="volunteer-col-1">
 
                     <div class="volunteer-form">
-                        <form>
+                        <form action="volunteer.php" method="post" enctype="multipart/form-data">
                             <h2>Volunteer</h2>
+
                             <div class="input-box">
-                                <input class="form-control" type="text" name="" required="required">
+                                <input class="form-control" type="text" name="name" required="required">
                                 <span>Name</span>
                             </div>
     
                             <div class="input-box">
-                                <input class="form-control" type="password" name="" required="required">
+                                <input class="form-control" type="password" name="password" required="required">
                                 <span>Password</span>
                             </div>
 
                             <div class="input-box">
-                                <input class="form-control" type="password" name="" required="required">
+                                <input class="form-control" type="password" name="conf_password" required="required">
                                 <span>Confirm Password</span>
                             </div>
     
                             <div class="input-box">
-                                <input class="form-control" type="text" name="" required="required">
+                                <input class="form-control" type="text" name="category" required="required">
                                 <span>Category</span>
                             </div>
 
                             <div class="input-box">
-                                <input class="form-control" type="text" name="" required="required">
+                                <input class="form-control" type="text" name="portfolio_link" required="required">
                                 <span>Portfolio Link</span>
                             </div>
 
                             <div class="input-box">
-                                <input class="form-control" type="text" name="" required="required">
+                                <input class="form-control" type="text" name="contact" required="required">
                                 <span>Contact</span>
                             </div>
 
                             <div class="input-box">
-                                <input class="form-control" type="text" name="" required="required">
+                                <input class="form-control" type="text" name="email_id" required="required">
                                 <span>Email Id</span>
                             </div>
 
                             <div class="input-box">
-                                <textarea class="form-control" required="required"></textarea>
+                                <textarea class="form-control" name="about" id="about" required="required"></textarea>
                                 <span>About</span>
                             </div>
+
+                             <div class="input-box">
+                                    <input type="file" name="volunteer_image" id="volunteerImage" class="form-control">
+                                    <span>Profile Image</span>
+                            </div>         
+                                                                                                          
     
                             <div class="input-box">
-                                <input type="submit" name="" value="Register">
+                                <input type="submit" name="register" value="Register">
                             </div>
     
                         </form>
@@ -223,6 +232,8 @@
         <section>
 
         </section>
+
+        <!----------------------------------------Script Reveal------------------------------------------------>
         
         <script type="text/javascript">
             window.addEventListener('scroll', slideIn);
@@ -245,8 +256,31 @@
                 }
             }
     
-        }
+            }
+        </script>
+        <!------------------------------------------Sweet Alert--------------------------------------------------->
+            <script src="js/sweetalert.min.js"></script>
+
+        
+
+            <?php
+            session_start();
+
+            if(isset($_SESSION['status']) && $_SESSION['status'] !='')
+            {
+            ?>
+            <script>
+            swal({
+            title: "<?php echo $_SESSION['status']; ?>",
+            //text: "You clicked the button!",
+            icon: "<?php echo $_SESSION['status_code']; ?>",
+            button: "OK",
+            });
             </script>
+            <?php
+            unset($_SESSION['status']);
+            }
+            ?>
         
     </body>
 </html>
