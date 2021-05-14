@@ -24,7 +24,7 @@ if(isset($_POST['register']))
     $email = $_POST['email_id'];
     $about = $_POST['about'];
 
-    $profileImageName = time()  .'_'. $_FILES['volunteer_image']['name'];
+    $profileImageName = time()  .'_'. $_FILES['vol_image']['name'];
     $target = 'images/' . $profileImageName;
 
 
@@ -39,7 +39,7 @@ if(isset($_POST['register']))
             $_SESSION['status'] = "Email Already Exists";
             $_SESSION['status_code'] = "error"; 
             }
-            
+
         else{
 
             if(move_uploaded_file($_FILES['volunteer_image']['tmp_name'], $target))
