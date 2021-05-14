@@ -259,9 +259,7 @@
             }
         </script>
         <!------------------------------------------Sweet Alert--------------------------------------------------->
-            <script src="js/sweetalert.min.js"></script>
-
-        
+            <script src="js/sweetalert.min.js"></script>        
 
             <?php
             
@@ -279,7 +277,6 @@
             });
             </script>
             <?php
-
             }
             ?>
         

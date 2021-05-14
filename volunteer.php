@@ -31,25 +31,40 @@ if(isset($_POST['register']))
     if($password==$conf_password)
     {  
 
+        $email_verification = "SELECT email from volunteer WHERE email = '$email'";
+        $result1 = mysqli_query($conn, $email_verification);
+        $num = mysqli_num_rows($result1);        
         
-    if(move_uploaded_file($_FILES['volunteer_image']['tmp_name'], $target))
-    {
-        $query1 = "INSERT INTO volunteer (name, password, category, portfolio, contact, email, about, vol_image) VALUES ('$name','$password','$category','$portfolio','$contact','$email','$about','$profileImageName')";
-    }
+        if($num> 0){
+            $_SESSION['status'] = "Email Already Exists";
+            $_SESSION['status_code'] = "error"; 
+            }
+            
+        else{
 
-    $result = mysqli_query($conn, $query1);
+            if(move_uploaded_file($_FILES['volunteer_image']['tmp_name'], $target))
+            {
+                $query1 = "INSERT INTO volunteer (name, password, category, portfolio, contact, email, about, vol_image) VALUES ('$name','$password','$category','$portfolio','$contact','$email','$about','$profileImageName')";
+            }
+
+            $result = mysqli_query($conn, $query1);
 
     
-    if($result){
-        $_SESSION['status'] = "Success";
-        $_SESSION['status_code'] = "success";
-        
-    }
-    else{
-        $_SESSION['status'] = "Try Again Later";
-        $_SESSION['status_code'] = "error";
+            if($result)
+                {
+                    $_SESSION['status'] = "Success";
+                    $_SESSION['status_code'] = "success";
+                }
+             else{
+                    $_SESSION['status'] = "Try Again Later";
+                    $_SESSION['status_code'] = "error";
        
-    }
+                }
+
+        }
+
+           
+    
 
     }
     else{
