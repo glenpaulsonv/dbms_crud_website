@@ -19,9 +19,9 @@ $users = mysqli_fetch_all($result, MYSQLI_ASSOC);
         
 </head>
 <body>
-
-<?php foreach($users as $user):  ?>
 <section class="volunteer">
+<?php foreach($users as $user):  ?>
+
 
 <div class="sub">
 
@@ -32,12 +32,12 @@ $users = mysqli_fetch_all($result, MYSQLI_ASSOC);
     
     </div>
     <div class="volunteer_image">
-    <img src="images/<?php echo $user['vol_image']; ?>" width="80" />
+    <img src="images/<?php echo $user['vol_image']; ?>" />
     </div>
 
 </div>
-</section>
-<?php endforeach; ?>
 
+<?php endforeach; ?>
+</section>
 </body>
 </html>
