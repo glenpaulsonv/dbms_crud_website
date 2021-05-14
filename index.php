@@ -1,4 +1,4 @@
-
+<?php include 'volunteer.php' ?>
 
 <!DOCTYPE html>
 <html>
@@ -136,7 +136,7 @@
                 <div class="volunteer-col-1">
 
                     <div class="volunteer-form">
-                        <form action="volunteer.php" method="post" enctype="multipart/form-data">
+                        <form action="index.php" method="post" enctype="multipart/form-data">
                             <h2>Volunteer</h2>
 
                             <div class="input-box">
@@ -264,11 +264,12 @@
         
 
             <?php
-            session_start();
+            
 
             if(isset($_SESSION['status']) && $_SESSION['status'] !='')
             {
             ?>
+
             <script>
             swal({
             title: "<?php echo $_SESSION['status']; ?>",
@@ -278,7 +279,7 @@
             });
             </script>
             <?php
-            unset($_SESSION['status']);
+
             }
             ?>
         

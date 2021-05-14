@@ -1,6 +1,5 @@
 <?php
 
-session_start();
 
 $servername = "localhost";
 $username = "root";
@@ -12,9 +11,8 @@ $conn = mysqli_connect($servername, $username, $password, $database);
 if (!$conn){
     die("Sorry we failed to connect: ". mysqli_connect_error());
 }
-else{
+else{   
 
-    
 if(isset($_POST['register']))
 {
     $name = $_POST['name'];
@@ -45,7 +43,7 @@ if(isset($_POST['register']))
     if($result){
         $_SESSION['status'] = "Success";
         $_SESSION['status_code'] = "success";
-        header("Location: http://localhost/web_mini/Home.php");
+        
     }
     else{
         $_SESSION['status'] = "Try Again Later";
@@ -56,8 +54,7 @@ if(isset($_POST['register']))
     }
     else{
     $_SESSION['status'] = "Incorrect Password";
-    $_SESSION['status_code'] = "error";
-    
+    $_SESSION['status_code'] = "error";    
     
     }
 
