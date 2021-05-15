@@ -24,7 +24,7 @@ if(isset($_POST['register']))
     $email = $_POST['email_id'];
     $about = $_POST['about'];
 
-    $profileImageName = time()  .'_'. $_FILES['vol_image']['name'];
+    $profileImageName = time()  .'_'. $_FILES['volunteer_image']['name'];
     $target = 'images/' . $profileImageName;
 
 

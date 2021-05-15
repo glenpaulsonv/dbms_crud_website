@@ -629,7 +629,7 @@
 /*-------------------------------------------------------domain section----------------------------------------------------*/
 
 .domain{
-
+padding-top: 100px;
 }
 
 .domain-row{
@@ -646,7 +646,7 @@
     background-color: #eeeeee;
     width: 300px;
     height:500px;
-    margin: 20px 10px 10px 10px;
+    margin: 20px 20px 20px 10px;
 }
 
 .volunteer_content{

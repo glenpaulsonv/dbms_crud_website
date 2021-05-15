@@ -180,7 +180,7 @@
                             </div>
 
                              <div class="input-box">
-                                    <input type="file" name="volunteer_image" id="volunteerImage" class="form-control">
+                                    <input type="file" name="volunteer_image" id="volunteer_image" class="form-control">
                                     <span>Profile Image</span>
                             </div>         
                                                                                                           
