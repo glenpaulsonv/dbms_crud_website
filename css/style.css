@@ -630,10 +630,7 @@
 
 <<<<<<< HEAD
 .domain{
-    width: 80%;
-    margin: auto;
-    text-align: center;
-    padding-top: 100px;
+padding-top: 100px;
 }
 =======
 .volunteers
@@ -651,16 +648,15 @@
 
 <<<<<<< HEAD
 .volunteer_card{
-    background-color: #cfcfcf;
-    
-    flex-basis: 31%;
-    border-radius: 10px;
-    margin-bottom: 5%;
-    text-align: left;
+    background-color: #eeeeee;
+    width: 300px;
+    height:500px;
+    margin: 20px 20px 20px 10px;
 }
 
 .volunteer_content{
     padding: 10px;
+<<<<<<< HEAD
     
 =======
 .sub_1{
@@ -700,15 +696,17 @@
    
 =======
 /*
+=======
+}
+
+>>>>>>> parent of c315adb (trying to fix the display images proportion)
 .volunteer_img{
     text-align: center;
-    width: 100%;
     
-}*/
-
-/* 
+}
 .volunteer_img img{
     width: 100%;
+<<<<<<< HEAD
     border-radius: 10px;
 }
 */
@@ -718,14 +716,17 @@
     
 >>>>>>> parent of 3c77e6a (displaying volunteer images)
     object-fit: cover;
+=======
+    height: 300px;
+    border-radius: 5px;
+>>>>>>> parent of c315adb (trying to fix the display images proportion)
 }
-
-
 
 .volunteer_desc{
     text-align: center;
 }
 
+<<<<<<< HEAD
 .volunteer_desc h3{
     margin-top: 16px;
     margin-bottom: 5px;
@@ -748,6 +749,8 @@
 }
 
 
+=======
+>>>>>>> parent of c315adb (trying to fix the display images proportion)
 .btn-div{
     text-align: center;
 =======
@@ -773,15 +776,16 @@
 {
     background-color: #353535;
     color: #cfcfcf;
-    width: 160px;
+    width: 200px;
     cursor: pointer;
-    height: 30px;
-    font-size: 13px;
+    height: 40px;
+    font-size: 15px;
     font-weight: 600px;
     border-radius: 5px;
     outline: none;
     text-transform: uppercase;
 }
+<<<<<<< HEAD
 
 @media(max-width:700px)
 {
@@ -806,3 +810,5 @@
     }
 >>>>>>> parent of 3c77e6a (displaying volunteer images)
 }
+=======
+>>>>>>> parent of c315adb (trying to fix the display images proportion)
