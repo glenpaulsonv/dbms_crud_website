@@ -19,21 +19,26 @@ $users = mysqli_fetch_all($result, MYSQLI_ASSOC);
         
 </head>
 <body>
+    
 <section class="volunteer">
 <?php foreach($users as $user):  ?>
 
 
-<div class="sub">
+<div class="sub_1">
+    <div class="sub_2">
+        
+        <div class="volunteer_image">
+        <img src="images/<?php echo $user['vol_image']; ?>" />
+        </div>
 
-    <div class="details">
-    <p> 
-    <?php echo $user['about']; ?>
-    </p>    
-    
+        <div class="details">
+        <p> 
+        <?php echo $user['about']; ?>
+        </p>    
+        </div>
+
     </div>
-    <div class="volunteer_image">
-    <img src="images/<?php echo $user['vol_image']; ?>" />
-    </div>
+  
 
 </div>
 
