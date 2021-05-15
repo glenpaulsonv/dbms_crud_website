@@ -1,6 +1,6 @@
 <?php 
 
-$conn = mysqli_connect('localhost','root','','volunteer_db');
+$conn = mysqli_connect('localhost','root','','vol_database');
 
 $querys = "SELECT * FROM volunteer";
 $result = mysqli_query($conn, $querys);

@@ -626,29 +626,26 @@
 
 
 
-/*-----------------------------------------------------------------Section Volunteers Page---------------------------------------------*/
+/*-------------------------------------------------------domain section----------------------------------------------------*/
 
-<<<<<<< HEAD
 .domain{
 padding-top: 100px;
 }
-=======
-.volunteers
-{
-    width: 100%;
-    min-height: 100vh;
-    /*margin: auto;*/
-    padding-top: 100px;
->>>>>>> parent of 779de92 (display volunteer images)
 
+.domain-row{
+    width: 80%;
+    margin: auto;
     display: flex;
-    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-items: center;
     justify-content: center;
 }
 
-<<<<<<< HEAD
 .volunteer_card{
-    background-color: #eeeeee;
+    background-color: #272727;
+    border-radius: 10px;
+    color: #cfcfcf;
     width: 300px;
     height:500px;
     margin: 20px 20px 20px 10px;
@@ -656,87 +653,25 @@ padding-top: 100px;
 
 .volunteer_content{
     padding: 10px;
-<<<<<<< HEAD
     
-=======
-.sub_1{
-    display: block;
-    height: 100%;
-    width: 700px;
-    /*max-width: 700px;*/
-    margin: 0 auto;
-    position: relative;
-}
-<<<<<<< HEAD
-
-.sub_2{
-    width: 100%;
-    display: flex;
-    flex-direction: column-reverse;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
->>>>>>> parent of 779de92 (display volunteer images)
 }
 
-.details{
-    padding-top: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column-reverse;
-
-}
-
-.volunteer_image{
-    width: 100%;
-<<<<<<< HEAD
-    height: 300px;
-    border-radius: 5px;
-   
-=======
-/*
-=======
-}
-
->>>>>>> parent of c315adb (trying to fix the display images proportion)
 .volunteer_img{
     text-align: center;
     
 }
 .volunteer_img img{
     width: 100%;
-<<<<<<< HEAD
-    border-radius: 10px;
-}
-*/
-.volunteer_content img{
-    width:  100%;
-    height: 400px;   
-    
->>>>>>> parent of 3c77e6a (displaying volunteer images)
-    object-fit: cover;
-=======
     height: 300px;
     border-radius: 5px;
->>>>>>> parent of c315adb (trying to fix the display images proportion)
+   
+    object-fit: cover;
 }
 
 .volunteer_desc{
-    text-align: center;
-}
-
-<<<<<<< HEAD
-.volunteer_desc h3{
-    margin-top: 16px;
-    margin-bottom: 5px;
-   /* text-align: left; */
-}
-
-.volunteer_desc p{
-    font-size: 13px;
-    padding: 0;
     text-align: left;
+    font-size: 15px;
+    padding: 10px;
 }
 
 .volunteer_desc h3{
@@ -749,29 +684,10 @@ padding-top: 100px;
 }
 
 
-=======
->>>>>>> parent of c315adb (trying to fix the display images proportion)
 .btn-div{
     text-align: center;
-=======
-    height: 100%;
-    margin: 0 auto;
-    padding: 40px;
-
-<<<<<<< HEAD
-    background-image: url("../assets/images/d11.svg");
-    background-position:center;
-	background-repeat: no-repeat;
-	background-size: contain;
-
->>>>>>> parent of 779de92 (display volunteer images)
 }
 
-.volunteer_image img{
-    height: 300px;
-    width: 300px;
-    border-radius: 100%;
-=======
 .btn
 {
     background-color: #353535;
@@ -785,30 +701,3 @@ padding-top: 100px;
     outline: none;
     text-transform: uppercase;
 }
-<<<<<<< HEAD
-
-@media(max-width:700px)
-{
-    .domain-row
-    {
-        flex-direction: column;
-        width: 100%;
-    }
-    .volunteer_card{
-        background-color: #cfcfcf;
-        
-        flex-basis: 57%;
-        border-radius: 10px;
-        margin-bottom: 5%;
-        text-align: left;
-    }
-    .volunteer_content img{
-        width:  100%;
-        height: 200px;   
-        
-        object-fit: cover;
-    }
->>>>>>> parent of 3c77e6a (displaying volunteer images)
-}
-=======
->>>>>>> parent of c315adb (trying to fix the display images proportion)

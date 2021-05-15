@@ -4,7 +4,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$database = "volunteer_db"; 
+$database = "vol_database"; 
 
 $conn = mysqli_connect($servername, $username, $password, $database);
 
