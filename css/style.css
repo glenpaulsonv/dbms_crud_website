@@ -626,22 +626,27 @@
 
 
 
-/*-------------------------------------------------------domain section----------------------------------------------------*/
+/*-----------------------------------------------------------------Section Volunteers Page---------------------------------------------*/
 
+<<<<<<< HEAD
 .domain{
 padding-top: 100px;
 }
+=======
+.volunteers
+{
+    width: 100%;
+    min-height: 100vh;
+    /*margin: auto;*/
+    padding-top: 100px;
+>>>>>>> parent of 779de92 (display volunteer images)
 
-.domain-row{
-    width: 80%;
-    margin: auto;
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-items: center;
+    align-items: center;
     justify-content: center;
 }
 
+<<<<<<< HEAD
 .volunteer_card{
     background-color: #272727;
     border-radius: 10px;
@@ -654,14 +659,38 @@ padding-top: 100px;
 .volunteer_content{
     padding: 10px;
     
+=======
+.sub_1{
+    display: block;
+    height: 100%;
+    width: 700px;
+    /*max-width: 700px;*/
+    margin: 0 auto;
+    position: relative;
 }
 
-.volunteer_img{
-    text-align: center;
-    
-}
-.volunteer_img img{
+.sub_2{
     width: 100%;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+>>>>>>> parent of 779de92 (display volunteer images)
+}
+
+.details{
+    padding-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column-reverse;
+
+}
+
+.volunteer_image{
+    width: 100%;
+<<<<<<< HEAD
     height: 300px;
     border-radius: 5px;
    
@@ -686,18 +715,21 @@ padding-top: 100px;
 
 .btn-div{
     text-align: center;
+=======
+    height: 100%;
+    margin: 0 auto;
+    padding: 40px;
+
+    background-image: url("../assets/images/d11.svg");
+    background-position:center;
+	background-repeat: no-repeat;
+	background-size: contain;
+
+>>>>>>> parent of 779de92 (display volunteer images)
 }
 
-.btn
-{
-    background-color: #353535;
-    color: #cfcfcf;
-    width: 200px;
-    cursor: pointer;
-    height: 40px;
-    font-size: 15px;
-    font-weight: 600px;
-    border-radius: 5px;
-    outline: none;
-    text-transform: uppercase;
+.volunteer_image img{
+    height: 300px;
+    width: 300px;
+    border-radius: 100%;
 }
