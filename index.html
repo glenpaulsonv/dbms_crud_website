@@ -7,12 +7,32 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>A Complete Responsive CRUD Website by glenpaulson</title>
         <link rel="stylesheet" type="text/css" href="css/style.css">
+
         
     </head>
     <body>
         
+        <nav>
+            <a href="index.html"><img src="assets/images/logo.png" alt="image"></a>
+            
+            <div class="nav-links" id="nav-links">
+                <i class="fa fa-times" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="#hero-section">Home</a></li>
+                    <li><a href="#service-section">Services</a></li>                    
+                    <li><a href="#volunteer-section">Volunteer</a></li> 
+                    <li><a href="">Update</a></li> 
+                    <li><a href="">Delete</a></li>
+                    <li><a href="">Log Out</a></li>                         
+                </ul>
+            </div>
+            <i class="fa fa-bars" onclick="showMenu()" ></i>
+
+
+        </nav>
             <!----------------------------------------Home Section----------------------------------------------->
-        <section class="hero-section">
+        <section class="hero-section" id="hero-section">
+           
 
             <div class="element-main">
                 <div class="element element-1">
@@ -42,7 +62,7 @@
 
         <!----------------------------------------Stages----------------------------------------------->
 
-        <section class="stages-section">
+        <section class="stages-section" id="stages-section">
             <h1 class="slide-in">Stages Involved</h1>
             <p class="slide-in">Its as easy as that</p>
 
@@ -68,7 +88,7 @@
 
         <!----------------------------------------Services----------------------------------------------->
 
-        <section class="service-section">
+        <section class="service-section" id="service-section">
 
            
             <h1 class="slide-in">Our Domains</h1>
@@ -124,7 +144,7 @@
 
         <!----------------------------------------Volunteer----------------------------------------------->
 
-        <section class="volunteer-section">
+        <section class="volunteer-section" id="volunteer-section">
 
             <div class="row-volunteer slide-in">
 
@@ -239,6 +259,7 @@
         <!----------------------------------------Footer----------------------------------------------->
 
         <section class="footer">
+            
             <div class="footer-row">
                 
                 <img src="assets/images/logo.png" alt="image" width="40px">
@@ -246,7 +267,16 @@
                     <h3>Volunteer Share Add Value</h3>
                 </div>
                 <div class="footer-desc">
-                    <p>A closed community community to share free courses and content</p>
+                    <div class="footer-links" id="footer-links">
+                        <ul>
+                            <li><a href="#hero-section">Home</a></li>
+                            <li><a href="#service-section">Services</a></li>                    
+                            <li><a href="#volunteer-section">Volunteer</a></li> 
+                            <li><a href="">Update</a></li> 
+                            <li><a href="">Delete</a></li>
+                            <li><a href="">Log Out</a></li>                         
+                        </ul>
+                    </div>
                 </div>
                 
                 
@@ -256,6 +286,19 @@
 
 
         </section>
+
+
+        <script>
+            var navLinks = document.getElementById("navLinks");
+
+            function showMenu(){
+                navLinks.style.right = "0px";
+            }
+
+            function hideMenu(){
+                navLinks.style.right = "-200px";
+            }
+        </script>
 
         <!----------------------------------------Script Reveal------------------------------------------------>
         
