@@ -349,7 +349,7 @@
     fill: none;
     background-color: transparent;
     border: none;
-    border-bottom: 1px solid #cfcfcf;
+    border-bottom: 1px solid #3d3d3d;
 }
 
 .volunteer-form .input-box input,
@@ -533,7 +533,7 @@
     position: relative;
     transform: translateY(50px);
     opacity: 0;
-    transition: all 1s ease;
+    transition: all 0.7s ease;
 }
 
 .slide-in.active{
@@ -696,20 +696,22 @@ padding-top: 100px;
 }
 
 
-.btn-div{
+/*------------------------------------------------------------------Footer-------------------------------------------------------*/
+.footer
+{   
+    
+    background-color: #353535;
     text-align: center;
+    color: #cfcfcf;
+    padding-bottom: 30px;
+    
 }
 
-.btn
-{
-    background-color: #353535;
-    color: #cfcfcf;
-    width: 200px;
-    cursor: pointer;
-    height: 40px;
-    font-size: 15px;
-    font-weight: 600px;
-    border-radius: 5px;
-    outline: none;
-    text-transform: uppercase;
+.footer h4{
+    margin-top: 30px;
+    margin-bottom: 15px;
 }
+
+
+
+
