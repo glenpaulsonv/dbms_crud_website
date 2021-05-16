@@ -400,6 +400,9 @@
 
 @media(max-width: 700px)
 {
+    .volunteer-section{
+        padding-top: 20px;
+    }
     .volunteer-form{
         width: 100%;
         padding: 10px;
@@ -412,11 +415,14 @@
         flex-basis: 80%;
     }
     .vol_reason{
-        padding: 20px;
+        padding: 40px;
         text-align: left;
         margin-bottom: 20px;
+        text-align: justify;
     }
-    .vol_reason h
+    .vol_reason h2{
+        text-align: center;
+    }
 }
 
 /*----------------------------------------------------sign-in-up-section-------------------------------------------*/
