@@ -411,6 +411,12 @@
     
         flex-basis: 80%;
     }
+    .vol_reason{
+        padding: 20px;
+        text-align: left;
+        margin-bottom: 20px;
+    }
+    .vol_reason h
 }
 
 /*----------------------------------------------------sign-in-up-section-------------------------------------------*/
