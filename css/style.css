@@ -398,6 +398,16 @@
     font-size: 18px;
 }
 
+textarea:focus, input:focus {
+    color: #cfcfcf;
+}
+
+
+.upload-img
+{
+    margin-top: 20px;
+}
+
 @media(max-width: 700px)
 {
     .volunteer-section{
@@ -715,6 +725,10 @@ padding-top: 100px;
 
 }
 
+.footer-row img{
+    margin-right: 10px;
+}
+
 .footer-title
 {
     flex-basis: 40%;
@@ -723,6 +737,7 @@ padding-top: 100px;
 .footer-desc
 {
     flex-basis: 40%;
+    text-align: right;
 }
 
 @media(max-width: 700px) {
@@ -733,6 +748,16 @@ padding-top: 100px;
     {
         padding-top: 7px;
         text-align: center;
+    }
+    .footer-row img{
+        margin-right: 0px;
+        margin-bottom: 10px;
+    }
+    .footer-desc
+    {
+    padding-right: 15px;
+    padding-left: 15px;
+    font-size: 13px;
     }
 }
 
