@@ -699,18 +699,44 @@ padding-top: 100px;
 /*------------------------------------------------------------------Footer-------------------------------------------------------*/
 .footer
 {   
-    
+    width: 100%;
     background-color: #353535;
-    text-align: center;
+    /*text-align: center;*/
     color: #cfcfcf;
     padding-bottom: 30px;
     
 }
 
-.footer h4{
-    margin-top: 30px;
-    margin-bottom: 15px;
+.footer-row{
+    padding-top: 50px;    
+    display: flex;    
+    justify-content:center;
+    align-items: center;
+
 }
+
+.footer-title
+{
+    flex-basis: 40%;
+}
+
+.footer-desc
+{
+    flex-basis: 40%;
+}
+
+@media(max-width: 700px) {
+    .footer-row{
+        flex-direction: column;
+    }
+    .footer-desc
+    {
+        padding-top: 7px;
+        text-align: center;
+    }
+}
+
+
 
 
 
