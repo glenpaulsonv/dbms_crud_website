@@ -22,13 +22,15 @@ else
             $email = $_POST['email_id']; 
 
 
+
+
             $email_verification = "SELECT email from volunteer WHERE email = '$email'";
             $result1 = mysqli_query($conn, $email_verification);
             
                 
             if($result1)
             {
-                $query = "DELETE from volunteer WHERE (name='$name' && password='$password')";
+                $query = "DELETE from volunteer WHERE name='$name'";
                 $result = mysqli_query($conn, $query);
 
 

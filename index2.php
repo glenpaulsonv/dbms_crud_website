@@ -9,16 +9,19 @@
     </head>
 
     <body>
+
+        <!---------------------------------------------------Header Section--------------------------------------------->
+
         <section class="header-section" id="header-section">
             <nav>
                 <div class="nav-links">
                     <ul>
                         <li><a href="">Home</a></li>
-                        <li><a href="">Home</a></li>
-                        <li><a href="">Home</a></li>
-                        <li><a href="">Home</a></li>
-                        <li><a href="">Home</a></li>
-                        <li><a href="">Home</a></li>
+                        <li><a href="">Services</a></li>
+                        <li><a href="">Volunteer</a></li>
+                        <li><a href="">Update</a></li>
+                        <li><a href="">Delete</a></li>
+                        <li><a href="">Log Out</a></li>
                     </ul>
                 </div>
             </nav>
@@ -49,6 +52,90 @@
             </div>
 
         </section>
+
+        <!---------------------------------------------------Stages Section--------------------------------------------->
+
+        <section class="stages-section" id="stages-section">
+            <h1 class="slide-in">Stages Involved</h1>
+            <p class="slide-in">Its as easy as that</p>
+
+            <div class="row slide-in">
+                <div class="stage-col">
+                    <img src="E:/dev/git_repo/dbms_crud_website/assets/images/stage1.png">
+                    <h3>Stage 1</h3>
+                    <p>Sign In</p>
+                </div>
+                <div class="stage-col">
+                    <img src="E:/dev/git_repo/dbms_crud_website/assets/images/stage2.png">
+                    <h3>Stage 2</h3>
+                    <p>Avail Services</p>
+                </div>
+                <div class="stage-col">
+                    <img src="E:/dev/git_repo/dbms_crud_website/assets/images/stage3.png">
+                    <h3>Stage 3</h3>
+                    <p>Contribute by Registering</p>
+                </div>
+            </div>
+        </section>
+
+        <!----------------------------------------Services----------------------------------------------->
+
+        <section class="service-section" id="service-section">
+
+           
+            <h1 class="slide-in">Our Domains</h1>
+            <p class="slide-in">Over the past few months we've been curating professionals from various domains</p>
+
+            <div class="row-services slide-in">
+                <div class="service-col">
+                    <img src="E:/dev/git_repo/dbms_crud_website/assets/images/uiux.png"> 
+                    <h3>UI UX Design</h3>
+                    <p>We've a bunch of freelance designers to show you the behind the scenes</p>
+                </div>
+
+                <div class="service-col">
+                    <img src="E:/dev/git_repo/dbms_crud_website/assets/images/web_dev.png">
+                    <h3>Web Dev</h3>
+                    <p>Industry Professionals with real time project sessions</p>
+                </div>
+
+                <div class="service-col">
+                    <img src="E:/dev/git_repo/dbms_crud_website/assets/images/app.png">
+                    <h3>Mobile App Dev</h3>
+                    <p>We're proud to have one of the top instructors on Flutter</p>
+                </div>
+
+               
+            </div>
+
+            <div class="row-services slide-in">
+                <div class="service-col">
+                    <img src="E:/dev/git_repo/dbms_crud_website/assets/images/Logo Design.png">
+                    <h3>Logo Design</h3>
+                    <p>We've a bunch of freelance designers to show you the behind the scenes</p>
+                </div>
+
+                <div class="service-col">
+                    <img src="E:/dev/git_repo/dbms_crud_website/assets/images/illustration_2.png">
+                    <h3>Illustrations</h3>
+                    <p>Industry Professionals with real time project sessions</p>
+                </div>
+
+                <div class="service-col">
+                    <img src="E:/dev/git_repo/dbms_crud_website/assets/images/brand.png">
+                    <h3>Brand Identity</h3>
+                    <p>We're proud to have one of the top instructors on Flutter</p>
+                </div>
+
+               
+            </div>
+
+
+
+        </section>
+
+
+
     </body>
 
 

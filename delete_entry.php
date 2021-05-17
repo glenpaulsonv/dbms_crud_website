@@ -1,4 +1,4 @@
-<?php include 'delete.php' ?>
+<?php include 'delete1.php' ?>
 
 <!DOCTYPE html>
 <html>
@@ -10,24 +10,20 @@
         
     </head>
     <body>
-        <nav>
-            <a href="index.html"><img src="assets/images/logo.png" alt="image"></a>
-            
-            <div class="nav-links" id="nav-links">
-                <i class="fa fa-times" onclick="hideMenu()"></i>
-                <ul>
-                    <li><a href="#hero-section">Home</a></li>
-                    <li><a href="#service-section">Services</a></li>                    
-                    <li><a href="#volunteer-section">Volunteer</a></li> 
-                    <li><a href="">Update</a></li> 
-                    <li><a href="">Delete</a></li>
-                    <li><a href="">Log Out</a></li>                         
-                </ul>
-            </div>
-            <i class="fa fa-bars" onclick="showMenu()" ></i>
+    <div class="nav-section">
+                <div class="nav-links" id="nav-links">
+                
+                    <ul>
+                        <li><a href="#hero-section">Home</a></li>
+                        <li><a href="#service-section">Services</a></li>                    
+                        <li><a href="#volunteer-section">Volunteer</a></li> 
+                        <li><a href="">Update</a></li> 
+                        <li><a href="">Delete</a></li>
+                        <li><a href="">Log Out</a></li>                         
+                    </ul>
+                </div>  
 
-
-        </nav>
+    </div>
     <!------------------------------------------------------------update-section------------------------------------------------->
     <section class="sign-in-section">
 
