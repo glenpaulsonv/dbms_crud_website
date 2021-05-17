@@ -1,0 +1,206 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+
+/*--------------------------------------------------------------Nav Bar--------------------------------------------------------- */
+
+nav{
+    display: flex;
+    padding: 2% 6%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav img{
+    width: 150px;
+
+}
+
+.nav-links{
+    flex: 1;
+    text-align: right;
+
+}
+
+.nav-links ul li{
+    list-style: none;
+    display: inline-block;
+    padding: 8px 12px;
+    position: relative;
+
+}
+
+.nav-links ul li a{
+    color: #353535;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+
+
+
+
+
+/*----------------------------------------------------Hero Section-------------------------------------------*/
+
+.hero-section
+{
+    width: 100%;
+    min-height: 100vh;    
+    margin: auto;
+       
+}
+
+.row{
+    margin:100px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hero-col-1{
+    
+    padding: 50px;
+    flex-basis: 40%;
+    position: relative;
+    margin-left: 50px;
+    margin-top: 45px;
+}
+
+.hero-col-1 h3{
+    color: #353535;
+    font-size: 35px;
+}
+
+
+
+
+@media(max-width: 700px)
+{
+   
+    .row{
+        margin-top: 10px;
+        flex-direction: column;
+    }
+
+    .hero-col-1{
+        
+        padding: 20px;
+        flex-basis: 40%;
+        position: relative; 
+        margin-left: 1px;       
+        margin-top: 150px;
+    }
+    .hero-section{
+        width: 80%;
+    }
+    .hero-col-1 h3{
+        color: #353535;
+        font-size: 25px;
+    }
+}
+
+
+/*------------------------------------------------------------Elements--------------------------------------------*/
+
+.element-main .element{
+    
+    position: absolute;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.element-1{
+    
+    width: 100px;
+    height: 100px;
+    
+    left: 19%;
+    bottom: 20%; 
+
+    /* left: 287px;
+    bottom: 165px; */
+    animation: spin 10s linear infinite;
+}
+
+.element-1 img{
+    width: 100%;
+}
+
+@keyframes spin {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+
+.element-2{
+    width: 500px;
+    height: 500px;
+    
+    left:2%;
+    bottom: -8%;
+    animation: topBounce 3s ease-in-out infinite;
+}
+
+.element-2 img{
+    width: 100%;
+}
+
+@keyframes topBounce{
+    0%, 100%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(20px);
+    }
+}
+
+.element-3{
+    width: 1100px;
+    height: 1100px;
+    
+    left: 50%;
+    top: -290px;
+}
+
+.element-3 img{
+    width: 100%;
+}
+
+@media(max-width: 700px)
+{
+    .element-1{
+    width: 100px;
+    height: 100px;
+    
+    left: 8%;
+    bottom: 8%;
+        
+    }
+    .element-2{
+        width: 400px;
+        height: 400px;
+        
+        left:-23%;
+        bottom: -22%;
+    }
+
+    .element-3{
+    width: 800px;
+    height: 800px;
+    
+    left: 50%;
+    top: -290px;
+    display: none;
+    
+    }
+
+    
+}

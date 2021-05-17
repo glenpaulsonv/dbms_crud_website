@@ -12,27 +12,26 @@
     </head>
     <body>
         
-        <nav>
-            <a href="index.html"><img src="assets/images/logo.png" alt="image"></a>
-            
-            <div class="nav-links" id="nav-links">
-                <i class="fa fa-times" onclick="hideMenu()"></i>
-                <ul>
-                    <li><a href="#hero-section">Home</a></li>
-                    <li><a href="#service-section">Services</a></li>                    
-                    <li><a href="#volunteer-section">Volunteer</a></li> 
-                    <li><a href="">Update</a></li> 
-                    <li><a href="">Delete</a></li>
-                    <li><a href="">Log Out</a></li>                         
-                </ul>
-            </div>
-            <i class="fa fa-bars" onclick="showMenu()" ></i>
+    <div class="nav-section">
+                <div class="nav-links" id="nav-links">
+                
+                    <ul>
+                        <li><a href="#hero-section">Home</a></li>
+                        <li><a href="#service-section">Services</a></li>                    
+                        <li><a href="#volunteer-section">Volunteer</a></li> 
+                        <li><a href="">Update</a></li> 
+                        <li><a href="">Delete</a></li>
+                        <li><a href="">Log Out</a></li>                         
+                    </ul>
+                </div>  
 
-
-        </nav>
+    </div>
+        
             <!----------------------------------------Home Section----------------------------------------------->
         <section class="hero-section" id="hero-section">
-           
+        
+            
+        
 
             <div class="element-main">
                 <div class="element element-1">
@@ -85,6 +84,7 @@
             </div>
         </section>
 
+        
 
         <!----------------------------------------Services----------------------------------------------->
 
@@ -96,7 +96,7 @@
 
             <div class="row-services slide-in">
                 <div class="service-col">
-                    <img src="E:/dev/git_repo/dbms_crud_website/assets/images/uiux.png">
+                    <img src="E:/dev/git_repo/dbms_crud_website/assets/images/uiux.png"> 
                     <h3>UI UX Design</h3>
                     <p>We've a bunch of freelance designers to show you the behind the scenes</p>
                 </div>
