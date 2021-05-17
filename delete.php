@@ -28,7 +28,7 @@ else
                 
             if($result1)
             {
-                $query = "DELETE from volunteer WHERE (name='$name' && password='$password')";
+                $query = "DELETE from volunteer WHERE password='$password'";
                 $result = mysqli_query($conn, $query);
 
 
@@ -39,7 +39,7 @@ else
                 }
                 else
                 {
-                    $_SESSION['status'] = "Try Again Later";
+                    $_SESSION['status'] = "Incorrect Password";
                     $_SESSION['status_code'] = "error";
                 }
 

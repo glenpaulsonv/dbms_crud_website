@@ -1,4 +1,4 @@
-<?php include 'delete1.php' ?>
+<?php include 'delete.php' ?>
 
 <!DOCTYPE html>
 <html>
@@ -24,7 +24,7 @@
                 </div>  
 
     </div>
-    <!------------------------------------------------------------update-section------------------------------------------------->
+    <!------------------------------------------------------------Delete-section------------------------------------------------->
     <section class="sign-in-section">
 
         <div class="element-main">
@@ -38,7 +38,7 @@
             
 
                 <div class="sign-in-form">
-                    <form>
+                    <form action="delete_entry.php" method="post">
                         <h2>Delete Entry</h2>
                         <div class="inputBox ">
                             <input class="form-control" type="text" name="name" required="required">
