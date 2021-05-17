@@ -3,35 +3,42 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$database = "volunteer_db"; 
-
+$database = "vol_database"; 
 
 $conn = mysqli_connect($servername, $username, $password, $database);
 
 
-if (!$conn){
+if (!$conn)
+    {
     die("Sorry we failed to connect: ". mysqli_connect_error());
-}
-else{
-    echo "Connection is successful<br>";
-}
+    }
+
+else
+    {
+        if(isset($_POST['delete']))
+        {
+            $name = $_POST['name'];
+            $password = $_POST['password'];            
+            $email = $_POST['email_id']; 
+
+            $query = "DELETE from volunteer WHERE name='$name' && password ='$password'";
+            $result = mysqli_query($conn, $query);
+            
+            if($result)
+            {
+                $_SESSION['status'] = "Success";
+                $_SESSION['status_code'] = "success";
+            }
+            else
+            {
+                $_SESSION['status'] = "Try Again Later";
+                $_SESSION['status_code'] = "error";
+            }
+                
 
 
-$rn = $_GET['r'];
-
-$query = "DELETE from student WHERE regno='$rn'";
-
-$result = mysqli_query($conn, $sql);
-
-$aff = mysqli_affected_rows($conn);
-
-echo "Number of affected rows: $aff <br>";
-if($result){
-    if($aff>0)echo "We deleted the record successfully<hr>";
-}
-else{
-    echo "We could not delete the record successfully<hr>";
-}
+        }
+    }
 
 
 
