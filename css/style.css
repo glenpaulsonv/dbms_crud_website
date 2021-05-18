@@ -487,6 +487,14 @@ textarea:focus, input:focus {
     
 }
 
+.row-update{
+    margin:20px 0;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    
+}
+
 .sign-in-form{
     width: 40%;
     padding: 40px;
@@ -559,6 +567,12 @@ textarea:focus, input:focus {
 {
    
     .row-sign-in{
+        margin-top: 10px;
+        flex-direction: column;
+    }
+
+    .row-update
+    {
         margin-top: 10px;
         flex-direction: column;
     }
