@@ -18,6 +18,23 @@ $users = mysqli_fetch_all($result, MYSQLI_ASSOC);
         
 </head>
 <body>
+
+
+        <div class="nav-section">
+                <div class="nav-links" id="nav-links">
+                
+                    <ul>
+                        <li><a href="#hero-section">Home</a></li>
+                        <li><a href="#service-section">Services</a></li>                    
+                        <li><a href="#volunteer-section">Volunteer</a></li> 
+                        <li><a href="">Update</a></li> 
+                        <li><a href="">Delete</a></li>
+                        <li><a href="">Log Out</a></li>                         
+                    </ul>
+                </div>  
+
+        </div>
+
         <section class="domain">
                 <div class="element-main">
                         <div class="element element-1">
@@ -57,6 +74,35 @@ $users = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
                 <?php endforeach; ?>
                 </div>
+        </section>
+
+        <!----------------------------------------Footer----------------------------------------------->
+
+        <section class="footer">
+            
+            <div class="footer-row">
+                
+                <img src="assets/images/logo.png" alt="image" width="40px">
+                <div class="footer-title">
+                    <h3>Volunteer Share Add Value</h3>
+                </div>
+                <div class="footer-desc">
+                    <div class="footer-links" id="footer-links">
+                        <ul>
+                            <li><a href="#hero-section">Home</a></li>
+                            <li><a href="#service-section">Services</a></li>                    
+                            <li><a href="#volunteer-section">Volunteer</a></li> 
+                            <li><a href="">Update</a></li> 
+                            <li><a href="">Delete</a></li>
+                            <li><a href="">Log Out</a></li>                         
+                        </ul>
+                    </div>
+                </div>
+                
+                
+            </div>          
+            
+
         </section>
 
       

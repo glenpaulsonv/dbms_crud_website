@@ -24,24 +24,42 @@ else
 
             $email_verification = "SELECT email from volunteer WHERE email = '$email'";
             $result1 = mysqli_query($conn, $email_verification);
-            
+            $num = mysqli_num_rows($result1);
                 
-            if($result1)
+            if($num > 0)
             {
-                $query = "DELETE from volunteer WHERE password='$password'";
-                $result = mysqli_query($conn, $query);
 
+                $password_verification = "SELECT password from volunteer WHERE password = '$password'";
+                $result2 = mysqli_query($conn, $password_verification);
+                $num1 = mysqli_num_rows($result2);
 
-                if($result)
+                if($num1 > 0)
                 {
-                    $_SESSION['status'] = "Success";
-                    $_SESSION['status_code'] = "success";
+                    $query = "DELETE from volunteer WHERE password='$password'";
+                    $result3 = mysqli_query($conn, $query);  
+                    
+                    if($result3)
+                    {
+                        $_SESSION['status'] = "User Deleted";
+                        $_SESSION['status_code'] = "success";
+                    }
+                    else
+                    {
+                        $_SESSION['status'] = "Try again";
+                        $_SESSION['status_code'] = "error";  
+                    }
+                    
                 }
                 else
                 {
+                  
                     $_SESSION['status'] = "Incorrect Password";
-                    $_SESSION['status_code'] = "error";
+                    $_SESSION['status_code'] = "error";     
                 }
+
+                
+                
+
 
                 
             }

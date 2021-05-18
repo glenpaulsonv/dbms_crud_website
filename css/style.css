@@ -685,6 +685,7 @@ textarea:focus, input:focus {
 
 .domain{
 padding-top: 100px;
+min-height: 100vh;
 }
 
 .domain-row{
@@ -741,7 +742,7 @@ padding-top: 100px;
 
 /*------------------------------------------------------------------Footer-------------------------------------------------------*/
 .footer
-{   
+{  
     width: 100%;
     background-color: #353535;
     /*text-align: center;*/
