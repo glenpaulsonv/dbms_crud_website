@@ -13,8 +13,8 @@
     <body>
         
     <div class="nav-section">
-                <div class="nav-links" id="nav-links">
-                
+                <div class="nav-links" id="nav-links-id">
+                <img src="assets/images/close_icon.svg" width="30px" onclick="hideMenu()">
                     <ul>
                         <li><a href="#hero-section">Home</a></li>
                         <li><a href="#service-section">Services</a></li>                    
@@ -23,7 +23,8 @@
                         <li><a href="">Delete</a></li>
                         <li><a href="">Log Out</a></li>                         
                     </ul>
-                </div>  
+                </div> 
+                <img src="assets/images/menu_icon.svg" width="30px" onclick="showMenu()"> 
 
     </div>
         
@@ -288,14 +289,14 @@
         <!--------------------------------------------------------Script ----------------------------------------------------------->
 
         <script>
-            var navLinks = document.getElementById("navLinks");
+            var navLinksVar = document.getElementById("nav-links-id");
 
             function showMenu(){
-                navLinks.style.right = "0px";
+                navLinksVar.style.left = "0px";
             }
 
             function hideMenu(){
-                navLinks.style.right = "-200px";
+                navLinksVar.style.left = "-150px";
             }
         </script>
 
