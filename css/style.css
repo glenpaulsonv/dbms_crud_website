@@ -22,7 +22,15 @@
     
 } */
 
-
+.sweet-alert .icon {
+    width: 88px;
+    height: 88px;
+  }
+  
+  .sweet-alert .icon.success .placeholder {
+    width: 88px;
+    height: 88px;
+  }
 /*----------------------------------------------------Nav Bar-------------------------------------------*/
 
 .nav-section{
