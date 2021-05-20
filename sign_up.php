@@ -1,3 +1,5 @@
+<?php include 'signup.php' ?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -27,30 +29,30 @@
             
 
                 <div class="sign-in-form">
-                    <form>
+                        <form action="sign_up.php" method="post">
                         <h2>Sign Up</h2>
                         <div class="inputBox ">
-                            <input class="form-control" type="text" name="full_name" required="required">
+                            <input class="form-control" type="text" name="name" required="required">
                             <span>User Name</span>
                         </div>
 
                         <div class="inputBox ">
-                            <input class="form-control" type="text" name="full_name" required="required">
+                            <input class="form-control" type="text" name="email_id" required="required">
                             <span>Email Id</span>
                         </div>
     
                         <div class="inputBox">
-                            <input class="form-control" type="text" name="password" required="required">
+                            <input class="form-control" type="password" name="password" required="required">
                             <span>Password</span>
                         </div>
 
                         <div class="inputBox">
-                            <input class="form-control" type="text" name="password" required="required">
+                            <input class="form-control" type="password" name="conf_password" required="required">
                             <span>Confirm Password</span>
                         </div>
     
                         <div class="inputBox">
-                            <input class="form-control" type="submit" name="" value="Sign Up">
+                            <input class="form-control" type="submit" name="sign-up" value="Sign Up">
                         </div>
     
                     </form>
@@ -60,6 +62,28 @@
         </div>
             
     </section>
+
+    <!------------------------------------------Sweet Alert--------------------------------------------------->
+            <script src="js/sweetalert.min.js"></script>        
+
+            <?php
+            
+
+            if(isset($_SESSION['status']) && $_SESSION['status'] !='')
+            {
+            ?>
+
+            <script>
+            swal({
+            title: "<?php echo $_SESSION['status']; ?>",
+            //text: "You clicked the button!",
+            icon: "<?php echo $_SESSION['status_code']; ?>",
+            button: "OK",
+            });
+            </script>
+            <?php
+            }
+            ?>
 
     </body>
 </html>
