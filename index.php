@@ -199,11 +199,22 @@ else
                                 <input class="form-control" type="password" name="conf_password" required="required">
                                 <span>Confirm Password</span>
                             </div>
-    
-                            <div class="input-box">
-                                <input class="form-control" type="text" name="category" required="required">
-                                <span>Category</span>
-                            </div>
+
+                            <div class="selection">
+                                
+                            <select class="selection-control" name="category" id="category"  required="required">
+                                <option selected hidden value="">Category</option>
+                                <option value="UI UX Design">UI UX Design</option>
+                                <option value="Web Dev">Web Dev</option>
+                                <option value="Mobile App Dev">Mobile App Dev</option>
+                                <option value="Logo Design">Logo Design</option>
+                                <option value="Illustrations">Illustrations</option>
+                                <option value="Brand Identity">Brand Identity</option>                                
+                                <option value="Others">Others</option>
+                                
+                            </select>
+                          </div>    
+                            
 
                             <div class="input-box">
                                 <input class="form-control" type="text" name="portfolio_link" required="required">
