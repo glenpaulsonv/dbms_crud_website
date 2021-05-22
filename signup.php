@@ -41,8 +41,9 @@ else
 
                     if($result)
                     {
-                        $_SESSION['status'] = "Success";
-                        $_SESSION['status_code'] = "success";
+                    session_start();
+                    $_SESSION['username'] = "$name";
+                    header("Location: http://localhost/dbms_crud_website/index.php");
                     }
                     else
                     {
