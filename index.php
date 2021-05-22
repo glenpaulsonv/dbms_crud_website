@@ -12,7 +12,7 @@ else
 {
     session_unset();
     session_destroy();
-    header("Location: http://localhost/dbms_crud_website/logout.php");
+    header("Location: http://localhost/dbms_crud_website/log_out.php");
 }
 
 ?>
@@ -22,7 +22,7 @@ else
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>A Complete Responsive CRUD Website by glenpaulson</title>
+        <title>Home</title>
         <link rel="stylesheet" type="text/css" href="css/style.css">
 
         
@@ -38,7 +38,7 @@ else
                         <li><a href="#volunteer-section">Volunteer</a></li> 
                         <li><a href="update_entry.php">Update</a></li> 
                         <li><a href="delete_entry.php">Delete</a></li>
-                        <li><a href="">Log Out</a></li>                         
+                        <li><a href="log_out.php">Log Out</a></li>                         
                     </ul>
                 </div> 
                 <img src="assets/images/menu_icon.svg" width="30px" onclick="showMenu()"> 
@@ -290,9 +290,9 @@ else
                             <li><a href="#hero-section">Home</a></li>
                             <li><a href="#service-section">Services</a></li>                    
                             <li><a href="#volunteer-section">Volunteer</a></li> 
-                            <li><a href="">Update</a></li> 
-                            <li><a href="">Delete</a></li>
-                            <li><a href="">Log Out</a></li>                         
+                            <li><a href="update_entry.php">Update</a></li> 
+                            <li><a href="delete_entry.php">Delete</a></li>
+                            <li><a href="log_out.php">Log Out</a></li>                         
                         </ul>
                     </div>
                 </div>

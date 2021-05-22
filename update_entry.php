@@ -1,4 +1,18 @@
 <?php include 'update.php' ?>
+<?php
+session_start();
+if(isset($_SESSION['username']))
+{    
+    
+}
+else
+{
+    
+    session_unset();
+    session_destroy();
+    header("Location: http://localhost/dbms_crud_website/log_out.php");
+}
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -14,12 +28,12 @@
             <div class="nav-links" id="nav-links">
             
                 <ul>
-                    <li><a href="#hero-section">Home</a></li>
-                    <li><a href="#service-section">Services</a></li>                    
-                    <li><a href="#volunteer-section">Volunteer</a></li> 
+                    <li><a href="index.php">Home</a></li>
+                    <li><a href="index.php">Services</a></li>                    
+                    <li><a href="index.php">Volunteer</a></li> 
                     <li><a href="update_entry.php">Update</a></li> 
                     <li><a href="delete_entry.php">Delete</a></li>
-                    <li><a href="">Log Out</a></li>                         
+                    <li><a href="log_out.php">Log Out</a></li>                         
                 </ul>
             </div>  
 
@@ -102,12 +116,12 @@
             <div class="footer-desc">
                 <div class="footer-links" id="footer-links">
                     <ul>
-                        <li><a href="#hero-section">Home</a></li>
-                        <li><a href="#service-section">Services</a></li>                    
-                        <li><a href="#volunteer-section">Volunteer</a></li> 
-                        <li><a href="">Update</a></li> 
-                        <li><a href="">Delete</a></li>
-                        <li><a href="">Log Out</a></li>                         
+                        <li><a href="index.php">Home</a></li>
+                        <li><a href="index.php">Services</a></li>                    
+                        <li><a href="index.php">Volunteer</a></li> 
+                        <li><a href="update_entry.php">Update</a></li> 
+                        <li><a href="delete_entry.php">Delete</a></li>
+                        <li><a href="log_out.php">Log Out</a></li>                         
                     </ul>
                 </div>
             </div>
