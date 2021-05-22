@@ -33,6 +33,8 @@ else
 
                 if($num1 > 0)
                 {
+                    session_start();
+                    $_SESSION['username'] = "$name";
                     header("Location: http://localhost/dbms_crud_website/index.php");
                 }
                 else
