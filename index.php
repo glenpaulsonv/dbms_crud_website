@@ -1,4 +1,21 @@
 <?php include 'volunteer2.php' ?>
+<?php 
+
+//start the session
+
+session_start();
+if(isset($_SESSION['username']))
+{    
+    
+}
+else
+{
+    session_unset();
+    session_destroy();
+    header("Location: http://localhost/dbms_crud_website/logout.php");
+}
+
+?>
 
 <!DOCTYPE html>
 <html>
