@@ -2,6 +2,8 @@
 
 $conn = mysqli_connect('localhost','root','','vol_database');
 
+$dispCategory = $_GET['id'];
+
 $querys = "SELECT * FROM volunteer";
 $result = mysqli_query($conn, $querys);
 $users = mysqli_fetch_all($result, MYSQLI_ASSOC);

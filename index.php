@@ -136,7 +136,7 @@ else
 
             <div class="row-services slide-in">
                 <div class="service-col">
-                    <img src="assets/images/Logo Design.png">
+                <a href="display_volunteers.php?id=Logo Design"><img src="assets/images/Logo Design.png" id="Logo Design"></a>
                     <h3>Logo Design</h3>
                     <p>We've a bunch of freelance designers to show you the behind the scenes</p>
                 </div>
