@@ -1,11 +1,10 @@
-<?php include 'volunteer2.php' ?>
 
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>A Complete Responsive CRUD Website by glenpaulson</title>
+        <title>Landing Page</title>
         <link rel="stylesheet" type="text/css" href="css/style.css">
 
         
@@ -16,12 +15,8 @@
                 <div class="nav-links" id="nav-links-id">
                 <img src="assets/images/close_icon.svg" width="30px" onclick="hideMenu()">
                     <ul>
-                        <li><a href="#hero-section">Home</a></li>
-                        <li><a href="#service-section">Services</a></li>                    
-                        <li><a href="#volunteer-section">Volunteer</a></li> 
-                        <li><a href="">Update</a></li> 
-                        <li><a href="">Delete</a></li>
-                        <li><a href="">Log Out</a></li>                         
+                        <li><a href="sign_in.php">Sign In</a></li>
+                        <li><a href="sign_up.php">Sign Up</a></li>                         
                     </ul>
                 </div> 
                 <img src="assets/images/menu_icon.svg" width="30px" onclick="showMenu()"> 
@@ -42,7 +37,7 @@
                     <img src="assets/images/b3.png">
                 </div> 
                 <div class="element element-3">
-                    <img src="assets/images/b5.png">
+                    <img src="assets/images/top_2.png">
                 </div>                 
                 
             </div>
@@ -60,6 +55,31 @@
            
         </section>
 
+        <!----------------------------------------Footer----------------------------------------------->
+
+        <section class="footer">
+            
+            <div class="footer-row">
+                
+                <img src="assets/images/logo.png" alt="image" width="40px">
+                <div class="footer-title">
+                    <h3>Volunteer Share Add Value</h3>
+                </div>
+                <div class="footer-desc">
+                    <div class="footer-links" id="footer-links">
+                        <ul>                            
+                            <li><a href="sign_in.php">Sign In</a></li>
+                            <li><a href="sign_up.php">Sign Up</a></li>                         
+                        </ul>
+                    </div>
+                </div>
+                
+                
+            </div>          
+            
+
+        </section>
+
         <!--------------------------------------------------------Script ----------------------------------------------------------->
 
         <script>
@@ -73,6 +93,6 @@
                 navLinksVar.style.left = "-150px";
             }
         </script>
+
 </body>
 </html>
-
