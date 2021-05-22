@@ -20,7 +20,7 @@
                 <img src="assets/images/b3.png">
             </div> 
             <div class="element element-3">
-                <img src="assets/images/b5.png">
+                <img src="assets/images/top_2.png">
             </div>  
         </div>    
         

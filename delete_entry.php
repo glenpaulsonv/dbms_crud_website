@@ -17,8 +17,8 @@
                         <li><a href="#hero-section">Home</a></li>
                         <li><a href="#service-section">Services</a></li>                    
                         <li><a href="#volunteer-section">Volunteer</a></li> 
-                        <li><a href="">Update</a></li> 
-                        <li><a href="">Delete</a></li>
+                        <li><a href="update_entry.php">Update</a></li> 
+                        <li><a href="delete_entry.php">Delete</a></li>
                         <li><a href="">Log Out</a></li>                         
                     </ul>
                 </div>  
@@ -30,7 +30,7 @@
         <div class="element-main">
             
             <div class="element element-3">
-                <img src="assets/images/b5.png">
+                <img src="assets/images/top_2.png">
             </div>  
         </div>    
         
