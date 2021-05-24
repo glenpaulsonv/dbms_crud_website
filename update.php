@@ -1,5 +1,20 @@
 <?php
 
+session_start();
+if(isset($_SESSION['username']))
+{    
+    
+}
+else
+{
+    
+    session_unset();
+    session_destroy();
+    header("Location: http://localhost/dbms_crud_website/log_out.php");
+}
+
+
+
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -45,21 +60,21 @@ else
                     
                     if($result3)
                     {
-                        $_SESSION['status'] = "Details Updated";
-                        $_SESSION['status_code'] = "success";
+                        $status['status'] = "Details Updated";
+                        $status_code['status_code'] = "success";
                     }
                     else
                     {
-                        $_SESSION['status'] = "Try again";
-                        $_SESSION['status_code'] = "error";  
+                        $status['status'] = "Try again";
+                        $status_code['status_code'] = "error";  
                     }
                     
                 }
                 else
                 {
                   
-                    $_SESSION['status'] = "Incorrect Password";
-                    $_SESSION['status_code'] = "error";     
+                    $status['status'] = "Incorrect Password";
+                    $status_code['status_code'] = "error";     
                 }
 
                 
@@ -71,8 +86,8 @@ else
 
             else
                 {
-                    $_SESSION['status'] = "Verify your email id";
-                    $_SESSION['status_code'] = "error";
+                    $status['status'] = "Verify your email id";
+                    $status_code['status_code'] = "error";
                 }
             
             
