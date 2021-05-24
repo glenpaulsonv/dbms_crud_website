@@ -1,5 +1,18 @@
 <?php
 
+//start the session
+
+session_start();
+if(isset($_SESSION['username']))
+{    
+    
+}
+else
+{
+    session_unset();
+    session_destroy();
+    header("Location: http://localhost/dbms_crud_website/log_out.php");
+}
 
 $servername = "localhost";
 $username = "root";
@@ -23,8 +36,7 @@ else
             $portfolio = $_POST['portfolio_link'];
             $contact = $_POST['contact'];
             $email = $_POST['email_id'];
-            $about = $_POST['about'];
-
+            
             $profileImageName = time()  .'_'. $_FILES['volunteer_image']['name'];
             $target = 'images/' . $profileImageName;
 
@@ -37,27 +49,27 @@ else
                 
                 if($num> 0)
                 {
-                    $_SESSION['status'] = "Email Already Exists";
-                    $_SESSION['status_code'] = "error"; 
+                    $status['status'] = "Email Already Exists";
+                    $status_code['status_code'] = "error"; 
                 }
                 else
                 {
                     if(move_uploaded_file($_FILES['volunteer_image']['tmp_name'], $target))
                     {
-                        $query = "INSERT INTO volunteer (name, password, category, portfolio, contact, email, about, vol_image) VALUES ('$name','$password','$category','$portfolio','$contact','$email','$about','$profileImageName')";
+                        $query = "INSERT INTO volunteer (name, password, category, portfolio, contact, email, vol_image) VALUES ('$name','$password','$category','$portfolio','$contact','$email','$profileImageName')";
                     }
 
                     $result = mysqli_query($conn, $query);
 
                     if($result)
                     {
-                        $_SESSION['status'] = "Success";
-                        $_SESSION['status_code'] = "success";
+                        $status['status'] = "Success";
+                        $status_code['status_code'] = "success";
                     }
                     else
                     {
-                        $_SESSION['status'] = "Try Again Later";
-                        $_SESSION['status_code'] = "error";
+                        $status['status'] = "Try Again Later";
+                        $status_code['status_code'] = "error";
        
                     }
 
