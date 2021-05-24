@@ -165,7 +165,7 @@
                 <div class="volunteer-col-1">
 
                     <div class="volunteer-form">
-                        <form action="index.php" method="post" enctype="multipart/form-data">
+                        <form action="home.php" method="post" enctype="multipart/form-data">
                             <h2>Volunteer</h2>
 
                             <div class="input-box">

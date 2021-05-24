@@ -4,15 +4,7 @@
 
 session_start();
 if(isset($_SESSION['username']))
-{    
-    
-}
-else
-{
-    session_unset();
-    session_destroy();
-    header("Location: http://localhost/dbms_crud_website/log_out.php");
-}
+{      
 
 $servername = "localhost";
 $username = "root";
@@ -76,6 +68,11 @@ else
 
                 }
             }
+            else
+            {
+                $status['status'] = "Passwords didn't match";
+                $status_code['status_code'] = "error";
+            }
 
 
         }
@@ -86,6 +83,14 @@ else
 
     }   
 
+
+}
+else
+{
+    session_unset();
+    session_destroy();
+    header("Location: http://localhost/dbms_crud_website/log_out.php");
+}
 
 
 

@@ -12,18 +12,19 @@
 <body>
 
 
-        <div class="nav-section">
-                <div class="nav-links" id="nav-links">
-                
+<div class="nav-section">
+                <div class="nav-links" id="nav-links-id">
+                <img src="assets/images/white_menu_icon.svg" width="30px" onclick="hideMenu()">
                     <ul>
-                        <li><a href="home.php">Home</a></li>                        
+                        <li><a href="home.php">Home</a></li>
                         <li><a href="update_entry.php">Update</a></li> 
                         <li><a href="delete_entry.php">Delete</a></li>
                         <li><a href="log_out.php">Log Out</a></li>                         
                     </ul>
-                </div>  
+                </div> 
+                <img src="assets/images/menu_icon.svg" width="30px" onclick="showMenu()"> 
 
-        </div>
+    </div>
 
         <section class="domain">
                 <div class="element-main">
