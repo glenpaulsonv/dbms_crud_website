@@ -1,5 +1,19 @@
 <?php
 
+session_start();
+if(isset($_SESSION['username']))
+{    
+    $status['status'] = "Already in Session";
+    $status_code['status_code'] = "success";
+}
+else
+{
+    session_unset();
+    session_destroy();
+    header("Location: http://localhost/dbms_crud_website/log_out.php");
+}
+
+
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -33,20 +47,20 @@ else
 
                 if($num1 > 0)
                 {
-                    session_start();
+                    
                     $_SESSION['username'] = "$name";
                     header("Location: http://localhost/dbms_crud_website/index.php");
                 }
                 else
                 {
-                    $_SESSION['status'] = "Verify your credentials";
-                    $_SESSION['status_code'] = "error";
+                    $status['status'] = "Verify your credentials";
+                    $status_code['status_code'] = "error";
                 }
             }
             else
             {
-                $_SESSION['status'] = "Verify your email id";
-                $_SESSION['status_code'] = "error";
+                $status['status'] = "Verify your email id";
+                $status_code['status_code'] = "error";
             }
     }
 }

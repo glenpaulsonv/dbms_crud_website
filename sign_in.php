@@ -9,6 +9,16 @@
         
     </head>
     <body>
+    <div class="nav-section">
+                <div class="nav-links" id="nav-links-id">
+                <img src="assets/images/close_icon.svg" width="30px" onclick="hideMenu()">
+                    <ul>                        
+                        <li><a href="sign_up.php">Sign Up</a></li>                         
+                    </ul>
+                </div> 
+                <img src="assets/images/menu_icon.svg" width="30px" onclick="showMenu()"> 
+
+    </div>
     <!------------------------------------------------------------sign-in section------------------------------------------------->
     <section class="sign-in-section">
 
@@ -58,6 +68,31 @@
         </div>
             
     </section>
+    <!----------------------------------------Footer----------------------------------------------->
+
+    <section class="footer">
+            
+            <div class="footer-row">
+                
+                <img src="assets/images/logo.png" alt="image" width="40px">
+                <div class="footer-title">
+                    <h3>Volunteer Share Add Value</h3>
+                </div>
+                <div class="footer-desc">
+                    <div class="footer-links" id="footer-links">
+                        <ul>                          
+                            
+                            <li><a href="sign_up.php">Sign Up</a></li>                         
+                        </ul>
+                    </div>
+                </div>
+                
+                
+            </div>          
+            
+
+        </section>
+
 
     <!------------------------------------------Sweet Alert--------------------------------------------------->
             <script src="js/sweetalert.min.js"></script>        
@@ -65,15 +100,15 @@
             <?php
             
 
-            if(isset($_SESSION['status']) && $_SESSION['status'] !='')
+            if(isset($status['status']) && $status['status'] !='')
             {
             ?>
 
             <script>
             swal({
-            title: "<?php echo $_SESSION['status']; ?>",
+            title: "<?php echo $status['status']; ?>",
             //text: "You clicked the button!",
-            icon: "<?php echo $_SESSION['status_code']; ?>",
+            icon: "<?php echo $status_code['status_code']; ?>",
             button: "OK",
             });
             </script>
