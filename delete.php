@@ -1,5 +1,18 @@
 <?php
 
+session_start();
+if(isset($_SESSION['username']))
+{    
+    
+}
+else
+{
+    session_unset();
+    session_destroy();
+    header("Location: http://localhost/dbms_crud_website/log_out.php");
+}
+
+
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -29,32 +42,32 @@ else
             if($num > 0)
             {
 
-                $password_verification = "SELECT password from volunteer WHERE password = '$password'";
+                $password_verification = "SELECT password from volunteer WHERE password = '$password' AND name = '$name'";
                 $result2 = mysqli_query($conn, $password_verification);
                 $num1 = mysqli_num_rows($result2);
 
                 if($num1 > 0)
                 {
-                    $query = "DELETE from volunteer WHERE password='$password'";
+                    $query = "DELETE from volunteer WHERE password='$password' AND name = '$name'";
                     $result3 = mysqli_query($conn, $query);  
                     
                     if($result3)
                     {
-                        $_SESSION['status'] = "User Deleted";
-                        $_SESSION['status_code'] = "success";
+                        $status['status'] = "User Deleted";
+                        $status_code['status_code'] = "success";
                     }
                     else
                     {
-                        $_SESSION['status'] = "Try again";
-                        $_SESSION['status_code'] = "error";  
+                        $status['status'] = "Try again";
+                        $status_code['status_code'] = "error";  
                     }
                     
                 }
                 else
                 {
                   
-                    $_SESSION['status'] = "Incorrect Password";
-                    $_SESSION['status_code'] = "error";     
+                    $status['status'] = "Incorrect Password";
+                    $status_code['status_code'] = "error";     
                 }
 
                 
@@ -66,8 +79,8 @@ else
 
             else
                 {
-                    $_SESSION['status'] = "Verify your email id";
-                    $_SESSION['status_code'] = "error";
+                    $status['status'] = "Verify your email id";
+                    $status_code['status_code'] = "error";
                 }
             
             

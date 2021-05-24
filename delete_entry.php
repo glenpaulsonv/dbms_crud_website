@@ -1,21 +1,5 @@
 <?php include 'delete.php' ?>
-<?php 
 
-//start the session
-
-session_start();
-if(isset($_SESSION['username']))
-{    
-    
-}
-else
-{
-    session_unset();
-    session_destroy();
-    header("Location: http://localhost/dbms_crud_website/log_out.php");
-}
-
-?>
 
 <!DOCTYPE html>
 <html>
@@ -28,17 +12,18 @@ else
     </head>
     <body>
     <div class="nav-section">
-                <div class="nav-links" id="nav-links">
-                
+                <div class="nav-links" id="nav-links-id">
+                <img src="assets/images/white_menu_icon.svg" width="30px" onclick="hideMenu()">
                     <ul>
-                        <li><a href="#hero-section">Home</a></li>
-                        <li><a href="#service-section">Services</a></li>                    
-                        <li><a href="#volunteer-section">Volunteer</a></li> 
+                        <li><a href="index.php">Home</a></li>
+                        <li><a href="index.php">Services</a></li>                    
+                        <li><a href="index.php">Volunteer</a></li> 
                         <li><a href="update_entry.php">Update</a></li> 
                         <li><a href="delete_entry.php">Delete</a></li>
-                        <li><a href="">Log Out</a></li>                         
+                        <li><a href="log_out.php">Log Out</a></li>                         
                     </ul>
-                </div>  
+                </div> 
+                <img src="assets/images/menu_icon.svg" width="30px" onclick="showMenu()"> 
 
     </div>
     <!------------------------------------------------------------Delete-section------------------------------------------------->
@@ -99,12 +84,12 @@ else
             <div class="footer-desc">
                 <div class="footer-links" id="footer-links">
                     <ul>
-                        <li><a href="#hero-section">Home</a></li>
-                        <li><a href="#service-section">Services</a></li>                    
-                        <li><a href="#volunteer-section">Volunteer</a></li> 
-                        <li><a href="">Update</a></li> 
-                        <li><a href="">Delete</a></li>
-                        <li><a href="">Log Out</a></li>                         
+                        <li><a href="index.php">Home</a></li>
+                        <li><a href="index.php">Services</a></li>                    
+                        <li><a href="index.php">Volunteer</a></li> 
+                        <li><a href="update_entry.php">Update</a></li> 
+                        <li><a href="delete_entry.php">Delete</a></li>
+                        <li><a href="log_out.php">Log Out</a></li>                         
                     </ul>
                 </div>
             </div>
@@ -121,15 +106,15 @@ else
     <?php
     
 
-    if(isset($_SESSION['status']) && $_SESSION['status'] !='')
+    if(isset($status['status']) && $status['status'] !='')
     {
     ?>
 
     <script>
     swal({
-    title: "<?php echo $_SESSION['status']; ?>",
+    title: "<?php echo $status['status']; ?>",
     //text: "You clicked the button!",
-    icon: "<?php echo $_SESSION['status_code']; ?>",
+    icon: "<?php echo $status_code['status_code']; ?>",
     button: "OK",
     });
     </script>
