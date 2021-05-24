@@ -2,8 +2,82 @@
 
 session_start();
 if(isset($_SESSION['username']))
-{    
+{        
+
+    $validate = True;
+
+        if(isset($_POST['update']))
+        {
+            include 'connectdb2.php';
+
+            $name = mysqli_real_escape_string($conn,$_POST['name']);
+            $email = mysqli_real_escape_string($conn,$_POST['email_id']);
+            $password = mysqli_real_escape_string($conn,$_POST['old_password']);
+            $new_password = mysqli_real_escape_string($conn,$_POST['new_password']);
+            $new_category = mysqli_real_escape_string($conn,$_POST['new_category']); 
+            $new_portfolio = mysqli_real_escape_string($conn,$_POST['new_portfolio_link']);
+            $new_contact = mysqli_real_escape_string($conn,$_POST['new_contact']);
+
+            if($name=='' OR $email=='' OR $password=='' OR $new_password=='' OR $new_category=='' OR $new_portfolio=='' OR $new_contact=='')
+            {
+            $status['status'] = "Enter all details";
+            $status_code['status_code'] = "error";
+            $validate = False;
+            }
+
+            if($validate)
+            {
+
+                $query = "SELECT password from volunteers where name =?";
+
+                $st = mysqli_prepare($conn,$query);        
+                mysqli_stmt_bind_param($st,'s',$name);   
+                mysqli_stmt_execute($st);              
+                $result = mysqli_stmt_get_result($st); 
     
+                $row = mysqli_fetch_assoc($result);
+            
+                if(mysqli_num_rows($result))
+                {
+                    $hpw=hash('sha512',$password);
+
+                    if($row['password'] == $hpw)
+                    {
+                        $hpwnew = hash('sha512',$new_password);
+                        $query2 = "UPDATE volunteers SET password=?, category=?, portfolio=?, contact=?  WHERE name=?";                        
+                        
+                        $st2 = mysqli_prepare($conn,$query2);                     
+                        mysqli_stmt_bind_param($st2,'sssss',$hpwnew,$new_category,$new_portfolio,$new_contact,$nam);
+                        $result2 = mysqli_stmt_execute($st2);
+                    
+                        if($result2)
+                        {
+                            $status['status'] = "Details Updated";
+                            $status_code['status_code'] = "success";
+                        }
+                        else
+                        {
+                            $status['status'] = "Try again later";
+                            $status_code['status_code'] = "error"; 
+                        }
+                    }
+                    else
+                    {
+                    $status['status'] = "Invalid Password";
+                    $status_code['status_code'] = "error";                
+                    }
+                }
+                else
+                {
+                    $status['status'] = "Not a registered volunteer";
+                    $status_code['status_code'] = "error";  
+                }
+            }  
+                          
+
+
+        }
+
 }
 else
 {
@@ -12,89 +86,6 @@ else
     session_destroy();
     header("Location: http://localhost/dbms_crud_website/log_out.php");
 }
+    
 
-
-
-$servername = "localhost";
-$username = "root";
-$password = "";
-$database = "vol_database"; 
-
-$conn = mysqli_connect($servername, $username, $password, $database);
-
-
-if (!$conn)
-    {
-    die("Sorry we failed to connect: ". mysqli_connect_error());
-    }
-
-else
-    {
-        if(isset($_POST['update']))
-        {
-            $name = $_POST['name'];
-            $email = $_POST['email_id'];
-            $password = $_POST['old_password']; 
-            $new_password = $_POST['new_password'];
-            $new_category = $_POST['new_category'];
-            $new_portfolio = $_POST['new_portfolio_link'];
-            $new_contact = $_POST['new_contact'];           
-             
-
-
-            $email_verification = "SELECT email from volunteer WHERE email = '$email'";
-            $result1 = mysqli_query($conn, $email_verification);
-            $num = mysqli_num_rows($result1);
-                
-            if($num > 0)
-            {
-
-                $password_verification = "SELECT password from volunteer WHERE password = '$password' AND name = '$name'";
-                $result2 = mysqli_query($conn, $password_verification);
-                $num1 = mysqli_num_rows($result2);
-
-                if($num1 > 0)
-                {
-                    $query = "UPDATE volunteer SET name='$name', password='$new_password', category='$new_category', portfolio='$new_portfolio', contact='$new_contact'  WHERE email='$email'";
-                    $result3 = mysqli_query($conn, $query);  
-                    
-                    if($result3)
-                    {
-                        $status['status'] = "Details Updated";
-                        $status_code['status_code'] = "success";
-                    }
-                    else
-                    {
-                        $status['status'] = "Try again";
-                        $status_code['status_code'] = "error";  
-                    }
-                    
-                }
-                else
-                {
-                  
-                    $status['status'] = "Incorrect Password";
-                    $status_code['status_code'] = "error";     
-                }
-
-                
-                
-
-
-                
-            }
-
-            else
-                {
-                    $status['status'] = "Verify your email id";
-                    $status_code['status_code'] = "error";
-                }
-            
-            
-                
-
-
-        }
-    }
-
-    ?>
+?>

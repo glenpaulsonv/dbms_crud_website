@@ -12,16 +12,23 @@ else
 
     if(isset($_POST['sign-up']))
     {
-            include 'connectdb2.php';
+            include 'connectdb1.php';
 
             $name = mysqli_real_escape_string($conn,$_POST['name']);
             $password = mysqli_real_escape_string($conn,$_POST['password']);
             $conf_password = mysqli_real_escape_string($conn,$_POST['conf_password']);
             $email= mysqli_real_escape_string($conn,$_POST['email_id']);
            
-            if($name=='' OR $password=='' OR $conf_password=='' OR $email=='')
+            if($name=='' $password=='' OR $conf_password=='' OR $email=='')
             {
                 $status['status'] = "Enter all details";
+                $status_code['status_code'] = "error";
+                $validate = False;
+            }
+
+            if($password!='' and $conf_password!='' and $password!=$conf_password)   
+            {
+                $status['status'] = "Passwords didn't match";
                 $status_code['status_code'] = "error";
                 $validate = False;
             }
@@ -51,7 +58,7 @@ else
                     $hpw = hash('sha512',$password);
                     
                     mysqli_stmt_bind_param($st2,'sss',$name,$hpw,$email);
-                    $result2 = mysqli_stmt_execute($s);
+                    $result2 = mysqli_stmt_execute($st2);
                     
                     if($result2)
                     {
