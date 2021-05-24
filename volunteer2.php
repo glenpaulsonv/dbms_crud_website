@@ -5,83 +5,116 @@
 session_start();
 if(isset($_SESSION['username']))
 {      
+    $validate = True;
 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$database = "vol_database"; 
-
-$conn = mysqli_connect($servername, $username, $password, $database);
-
-if (!$conn)
-    {
-    die("Sorry we failed to connect: ". mysqli_connect_error());
-    }
-else
-    {
         if(isset($_POST['register']))
         {
-            $name = $_POST['name'];
-            $password = $_POST['password'];
-            $conf_password = $_POST['conf_password'];
-            $category = $_POST['category'];
-            $portfolio = $_POST['portfolio_link'];
-            $contact = $_POST['contact'];
-            $email = $_POST['email_id'];
-            
-            $profileImageName = time()  .'_'. $_FILES['volunteer_image']['name'];
-            $target = 'images/' . $profileImageName;
+            include 'connectdb2.php';
 
+            $name = mysqli_real_escape_string($conn,$_POST['name']);
+            $password = mysqli_real_escape_string($conn,$_POST['password']);
+            $conf_password = mysqli_real_escape_string($conn,$_POST['conf_password']);
+            $category = mysqli_real_escape_string($conn,$_POST['category']);
+            $portfolio = mysqli_real_escape_string($conn,$_POST['portfolio_link']);
+            $contact = mysqli_real_escape_string($conn,$_POST['contact']);
+            $email = mysqli_real_escape_string($conn,$_POST['email_id']);
+            $f =$_FILES["volunteer_image"];
 
-            if($password==$conf_password)
+            if($name=='' OR $password=='' OR $conf_password=='' OR  $category=='' OR $portfolio=='' OR $contact=='' OR $email=='')
             {
-                $email_verification = "SELECT email from volunteer WHERE email = '$email'";
-                $result1 = mysqli_query($conn, $email_verification);
-                $num = mysqli_num_rows($result1);
-                
-                if($num> 0)
+                $status['status'] = "Enter all details";
+                $status_code['status_code'] = "error";
+                $validate = False;
+            }
+
+            if($password!='' and $conf_password!='' and $password!=$conf_password)   
+            {
+                $status['status'] = "Passwords didn't match";
+                $status_code['status_code'] = "error";
+                $validate = False;
+            }
+
+            if (empty($_FILES['volunteer_image']['name'])) {  /* Include this in the volunteer form */
+                $status['status'] = "Upload your image";
+                $status_code['status_code'] = "error";
+                $validate = False;
+            }
+            else
+            {
+                $check = getimagesize($_FILES["volunteer_image"]["tmp_name"]);
+                if(!$check)
                 {
-                    $status['status'] = "Email Already Exists";
+                    $status['status'] = "Invalid file type";
+                    $status_code['status_code'] = "error";
+                    $validate = False;
+                }
+                if ($_FILES["volunteer_image"]["size"] > 100000) {
+                    $status['status'] = "File size exceeded";
+                    $status_code['status_code'] = "error";
+                    $validate = False;
+                }
+                    
+            }
+
+
+            if($validate)
+            {
+
+                $query = "SELECT password from volunteers where name =?";
+
+                $img_name = $_FILES['volunteer_image']['name'];
+                $target_dir = "images/";
+                $target_file = $target_dir . basename($_FILES["volunteer_image"]["name"]);
+      
+                // Select file type
+                $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+
+                $image_base64 = base64_encode(file_get_contents($_FILES['volunteer_image']['tmp_name']) );
+                $image = 'data:image/'.$imageFileType.';base64,'.$image_base64;
+         
+        
+                $st = mysqli_prepare($conn,$query);
+                mysqli_stmt_bind_param($st,'s',$name);
+                mysqli_stmt_execute($st);
+                $result = mysqli_stmt_get_result($st);
+
+                echo mysqli_num_rows($result);
+
+                if(mysqli_num_rows($result)>0)
+                {
+                    $status['status'] = "Volunteer already exists";
                     $status_code['status_code'] = "error"; 
                 }
+
+
                 else
                 {
-                    if(move_uploaded_file($_FILES['volunteer_image']['tmp_name'], $target))
-                    {
-                        $query = "INSERT INTO volunteer (name, password, category, portfolio, contact, email, vol_image) VALUES ('$name','$password','$category','$portfolio','$contact','$email','$profileImageName')";
-                    }
+                    $query2 = "INSERT INTO volunteers(name,password,category,portfolio,contact,email,vol_img) VALUES (?,?,?,?,?,?,?)";
+                    $st2 = mysqli_prepare($conn,$query2);
 
-                    $result = mysqli_query($conn, $query);
-
-                    if($result)
+                    $hpw = hash('sha512',$password);
+            
+                    mysqli_stmt_bind_param($st2,'sssssss',$password,$hpw,$category,$portfolio,$contact,$email,$image);
+                    $result2 = mysqli_stmt_execute($st2);
+            
+                    if($result2)
                     {
-                        $status['status'] = "Success";
+                        $status['status'] = "Registered";
                         $status_code['status_code'] = "success";
                     }
                     else
                     {
-                        $status['status'] = "Try Again Later";
+                        $status['status'] = "Try again later;
                         $status_code['status_code'] = "error";
-       
                     }
-
 
                 }
             }
-            else
-            {
-                $status['status'] = "Passwords didn't match";
-                $status_code['status_code'] = "error";
-            }
 
+            
+            
 
         }
-
-
-
-
-
-    }   
 
 
 }

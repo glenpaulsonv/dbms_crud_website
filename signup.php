@@ -19,7 +19,7 @@ else
             $conf_password = mysqli_real_escape_string($conn,$_POST['conf_password']);
             $email= mysqli_real_escape_string($conn,$_POST['email_id']);
            
-            if($name=='' $password=='' OR $conf_password=='' OR $email=='')
+            if($name=='' OR $password=='' OR $conf_password=='' OR $email=='')
             {
                 $status['status'] = "Enter all details";
                 $status_code['status_code'] = "error";
