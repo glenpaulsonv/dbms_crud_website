@@ -39,11 +39,6 @@
                             <input class="form-control" type="text" name="name" required="required">
                             <span>User Name</span>
                         </div>
-
-                        <div class="inputBox ">
-                            <input class="form-control" type="text" name="email_id" required="required">
-                            <span>Email Id</span>
-                        </div>
     
                         <div class="inputBox">
                             <input class="form-control" type="password" name="password" required="required">

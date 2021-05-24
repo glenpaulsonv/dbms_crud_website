@@ -14,10 +14,9 @@ else
     {
         include 'connectdb1.php';
         $name = mysqli_real_escape_string($conn,$_POST['name']);
-        $password = mysqli_real_escape_string($conn,$_POST['password']);
-        $email = mysqli_real_escape_string($conn,$_POST['email_id']);
+        $password = mysqli_real_escape_string($conn,$_POST['password']);        
         
-        if($name=='' OR $password=='' OR $email=='')
+        if($name=='' OR $password=='')
         {
         $status['status'] = "Enter all details";
         $status_code['status_code'] = "error";

@@ -7,67 +7,66 @@ if(isset($_SESSION['username']))
 }
 else
 {
-   
-$servername = "localhost";
-$username = "root";
-$password = "";
-$database = "user_database"; 
 
-$conn = mysqli_connect($servername, $username, $password, $database);
+    $validate = True;
 
-
-if (!$conn)
-    {
-    die("Sorry we failed to connect: ". mysqli_connect_error());
-    }
-
-else
-{
     if(isset($_POST['sign-up']))
     {
-            $name = $_POST['name'];
-            $email = $_POST['email_id'];
-            $password = $_POST['password']; 
-            $conf_password = $_POST['conf_password'];
+            include 'connectdb2.php';
 
-            if($password==$conf_password)
+            $name = mysqli_real_escape_string($conn,$_POST['name']);
+            $password = mysqli_real_escape_string($conn,$_POST['password']);
+            $conf_password = mysqli_real_escape_string($conn,$_POST['conf_password']);
+            $email= mysqli_real_escape_string($conn,$_POST['email_id']);
+           
+            if($name=='' OR $password=='' OR $conf_password=='' OR $email=='')
             {
-                $email_verification = "SELECT email from users WHERE email = '$email'";
-                $result1 = mysqli_query($conn, $email_verification);
-                $num = mysqli_num_rows($result1);
-                
-                if($num> 0)
+                $status['status'] = "Enter all details";
+                $status_code['status_code'] = "error";
+                $validate = False;
+            }
+
+            if($validate)
+            {
+                $query = "SELECT password from users where name =?";
+
+                $st = mysqli_prepare($conn,$query);        
+                mysqli_stmt_bind_param($st,'s',$name);   
+                mysqli_stmt_execute($st);              
+                $result = mysqli_stmt_get_result($st); 
+    
+                $row = mysqli_fetch_assoc($result);
+
+                if(mysqli_num_rows($result)>0)
                 {
-                    $status['status'] = "Email Already Exists";
-                    $status_code['status_code'] = "error"; 
+                    $status['status'] = "User already exists";
+                    $status_code['status_code'] = "error";
                 }
+
                 else
                 {
-                    $query = "INSERT INTO users (name, password, email) VALUES ('$name','$password','$email')";
-
-                    $result = mysqli_query($conn, $query);
-
-                    if($result)
-                    {
+                    $query2 = "INSERT INTO users(name,password,email) VALUES (?,?,?)";
+                    $st2 = mysqli_prepare($conn,$query2);
+        
+                    $hpw = hash('sha512',$password);
                     
-                    $_SESSION['username'] = "$name";
-                    header("Location: http://localhost/dbms_crud_website/home.php");
-                    }
-                    else
+                    mysqli_stmt_bind_param($st2,'sss',$name,$hpw,$email);
+                    $result2 = mysqli_stmt_execute($s);
+                    
+                    if($result2)
                     {
-                        $status['status'] = "Try Again Later";
-                        $status_code['status_code'] = "error";
-       
+                        $status['status'] = "User Registered";
+                        $status_code['status_code'] = "success";
                     }
+        
                 }
+
+
             }
-            else
-            {
-                $status['status'] = "Passwords didn't match";
-                $status_code['status_code'] = "error";
-            }
+
+
+            
     }
-}
 
 
 }
