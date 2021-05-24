@@ -1,32 +1,4 @@
-<?php 
-
-$conn = mysqli_connect('localhost','root','','vol_database');
-
-$dispCategory = $_GET['id'];
-
-$querys = "SELECT * FROM volunteer";
-$result = mysqli_query($conn, $querys);
-$users = mysqli_fetch_all($result, MYSQLI_ASSOC);
-
-?>
-
-<?php 
-
-//start the session
-
-session_start();
-if(isset($_SESSION['username']))
-{    
-    
-}
-else
-{
-    session_unset();
-    session_destroy();
-    header("Location: http://localhost/dbms_crud_website/log_out.php");
-}
-
-?>
+<?php include 'disp.php' ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -47,9 +19,9 @@ else
                         <li><a href="#hero-section">Home</a></li>
                         <li><a href="#service-section">Services</a></li>                    
                         <li><a href="#volunteer-section">Volunteer</a></li> 
-                        <li><a href="">Update</a></li> 
-                        <li><a href="">Delete</a></li>
-                        <li><a href="">Log Out</a></li>                         
+                        <li><a href="update_entry.php">Update</a></li> 
+                        <li><a href="delete_entry.php">Delete</a></li>
+                        <li><a href="log_out.php">Log Out</a></li>                         
                     </ul>
                 </div>  
 
@@ -64,7 +36,7 @@ else
                             <img src="assets/images/b3.png">
                         </div> 
                         <div class="element element-3">
-                            <img src="assets/images/b5.png">
+                            <img src="assets/images/top_2.png">
                         </div>  
                 </div>  
 
@@ -81,8 +53,7 @@ else
                                         <div class="volunteer_desc">
                                                 <h3><?php echo $user['name']; ?></h3>
                                                 <p><?php echo $user['category']; ?></p>                                                
-                                                <p><?php echo $user['portfolio']; ?></p>
-                                                <p><?php echo $user['about']; ?></p>
+                                                <p><?php echo $user['portfolio']; ?></p>                                               
                                                 
                                         </div>
                                         
@@ -109,12 +80,12 @@ else
                 <div class="footer-desc">
                     <div class="footer-links" id="footer-links">
                         <ul>
-                            <li><a href="#hero-section">Home</a></li>
-                            <li><a href="#service-section">Services</a></li>                    
-                            <li><a href="#volunteer-section">Volunteer</a></li> 
-                            <li><a href="">Update</a></li> 
-                            <li><a href="">Delete</a></li>
-                            <li><a href="">Log Out</a></li>                         
+                            <li><a href="home.php">Home</a></li>
+                            <li><a href="home.php">Services</a></li>                    
+                            <li><a href="home.php">Volunteer</a></li> 
+                            <li><a href="update_entry.php">Update</a></li> 
+                            <li><a href="delete_entry.php">Delete</a></li>
+                            <li><a href="log_out.php">Log Out</a></li>                         
                         </ul>
                     </div>
                 </div>
