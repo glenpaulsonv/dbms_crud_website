@@ -102,10 +102,12 @@
 
             function showMenu(){
                 navLinksVar.style.left = "0px";
+                document.body.style.overflowY = "hidden";
             }
 
             function hideMenu(){
                 navLinksVar.style.left = "-150px";
+                document.body.style.overflowY = "visible";
             }
         </script>
 

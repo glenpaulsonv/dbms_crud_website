@@ -51,12 +51,12 @@
                         </div>
     
                         <div class="inputBox">
-                            <input class="form-control" type="text" name="old_password" required="required">
+                            <input class="form-control" type="password" name="old_password" required="required">
                             <span>Old Password</span>
                         </div>
 
                         <div class="inputBox">
-                            <input class="form-control" type="text" name="new_password" required="required">
+                            <input class="form-control" type="password" name="new_password" required="required">
                             <span>New Password</span>
                         </div>
 
@@ -134,10 +134,12 @@
 
             function showMenu(){
                 navLinksVar.style.left = "0px";
+                document.body.style.overflowY = "hidden";
             }
 
             function hideMenu(){
                 navLinksVar.style.left = "-150px";
+                document.body.style.overflowY = "visible";
             }
         </script>
     <!------------------------------------------Sweet Alert--------------------------------------------------->
