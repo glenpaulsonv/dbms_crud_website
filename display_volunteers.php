@@ -93,6 +93,21 @@
 
         </section>
 
+         <!--------------------------------------------------------Responsive Nav Script ----------------------------------------------------------->
+
+         <script>
+            var navLinksVar = document.getElementById("nav-links-id");
+
+            function showMenu(){
+                navLinksVar.style.left = "0px";
+            }
+
+            function hideMenu(){
+                navLinksVar.style.left = "-150px";
+            }
+        </script>
+
+
       
 </body>
 </html>
