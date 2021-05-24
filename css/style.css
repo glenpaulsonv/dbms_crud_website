@@ -84,9 +84,14 @@
 
     .nav-section img{
         display: block;        
-        margin:10px;
+        margin-top: 10px;
         font-size: 22px;
         cursor: pointer;
+    }
+
+    .nav-links img{
+        margin-top: 20px;
+        margin-left: 20px;
     }
 
     .nav-links ul{
@@ -261,7 +266,7 @@
     width: 80%;
     min-height: 85vh;    
     margin: auto;
-    padding-top: 100px;
+    padding-top: 50px;
   /*  box-sizing: border-box;
     overflow: hidden; */
     text-align: center;
@@ -365,13 +370,14 @@
     width: 100%;
     min-height: 100vh;
     margin: auto;
-    padding-top: 100px;
+    padding-top: 50px;
+    padding-bottom: 50px;
    
     background: #353535; 
 }
 
 .row-volunteer{
-    margin:100px 0;
+    margin-top: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -662,7 +668,7 @@ textarea:focus, input:focus {
     width: 100%;
     min-height: 100vh;
     /*margin: auto;*/
-    padding-top: 100px;
+    padding-top: 50px;
 
     display: flex;
     align-items: center;
