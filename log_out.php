@@ -1,15 +1,5 @@
+<?php include 'logout.php' ?>
 
-<?php
-
-
-session_start();
-session_unset();
-session_destroy();
-
-$_SESSION['status'] = "You're Logged Out";
-$_SESSION['status_code'] = "warning";
-
-?>
 
 <!DOCTYPE html>
 <html>
@@ -93,7 +83,7 @@ $_SESSION['status_code'] = "warning";
 
         </section>
 
-        <!--------------------------------------------------------Script ----------------------------------------------------------->
+        <!--------------------------------------------------------Responsive Nav Script ----------------------------------------------------------->
 
         <script>
             var navLinksVar = document.getElementById("nav-links-id");
@@ -113,15 +103,15 @@ $_SESSION['status_code'] = "warning";
             <?php
             
 
-            if(isset($_SESSION['status']) && $_SESSION['status'] !='')
+            if(isset($status['status']) && $status['status'] !='')
             {
             ?>
 
             <script>
             swal({
-            title: "<?php echo $_SESSION['status']; ?>",
+            title: "<?php echo $status['status']; ?>",
             //text: "You clicked the button!",
-            icon: "<?php echo $_SESSION['status_code']; ?>",
+            icon: "<?php echo $status_code['status_code']; ?>",
             button: "OK",
             });
             </script>
