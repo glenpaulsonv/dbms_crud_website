@@ -15,9 +15,9 @@
                 <div class="nav-links" id="nav-links-id">
                 <img src="assets/images/white_menu_icon.svg" width="30px" onclick="hideMenu()">
                     <ul>
-                        <li><a href="#hero-section">Home</a></li>
-                        <li><a href="#service-section">Services</a></li>                    
-                        <li><a href="#volunteer-section">Volunteer</a></li> 
+                        <li><a href="index.php">Home</a></li>
+                        <li><a href="index.php">Services</a></li>                    
+                        <li><a href="index.php">Volunteer</a></li> 
                         <li><a href="update_entry.php">Update</a></li> 
                         <li><a href="delete_entry.php">Delete</a></li>
                         <li><a href="log_out.php">Log Out</a></li>                         
@@ -62,10 +62,20 @@
                             <span>New Password</span>
                         </div>
 
-                        <div class="inputBox ">
-                            <input class="form-control" type="text" name="new_category" required="required">
-                            <span>New Category</span>
-                        </div>
+                        <div class="selection">
+                                
+                            <select class="selection-control" name="new_category" id="new_category"  required="required">
+                                <option selected hidden value="">Category</option>
+                                <option value="UI UX Design">UI UX Design</option>
+                                <option value="Web Dev">Web Dev</option>
+                                <option value="Mobile App Dev">Mobile App Dev</option>
+                                <option value="Logo Design">Logo Design</option>
+                                <option value="Illustrations">Illustrations</option>
+                                <option value="Brand Identity">Brand Identity</option>                                
+                                <option value="Others">Others</option>
+                                
+                            </select>
+                          </div>                          
 
                         <div class="inputBox ">
                             <input class="form-control" type="text" name="new_portfolio_link" required="required">

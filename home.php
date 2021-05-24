@@ -183,7 +183,7 @@
                                 <span>Confirm Password</span>
                             </div>
 
-                            <div class="selection">
+                          <div class="selection">
                                 
                             <select class="selection-control" name="category" id="category"  required="required">
                                 <option selected hidden value="">Category</option>
