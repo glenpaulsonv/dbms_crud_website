@@ -8,58 +8,60 @@ if(isset($_SESSION['username']))
 else
 {    
 
+    $validate = True;
 
-
-$servername = "localhost";
-$username = "root";
-$password = "";
-$database = "user_database"; 
-
-$conn = mysqli_connect($servername, $username, $password, $database);
-
-
-if (!$conn)
-    {
-    die("Sorry we failed to connect: ". mysqli_connect_error());
-    }
-
-else
-{
     if(isset($_POST['sign-in']))
     {
-            $name = $_POST['name'];            
-            $password = $_POST['password'];
-            $email = $_POST['email_id'];             
+        include 'connectdb1.php';
+        $name = mysqli_real_escape_string($conn,$_POST['name']);
+        $password = mysqli_real_escape_string($conn,$_POST['password']);
+        $email = mysqli_real_escape_string($conn,$_POST['email_id']);
+        
+        if($name=='' OR $password=='' OR $email=='')
+        {
+        $status['status'] = "Enter all details";
+        $status_code['status_code'] = "error";
+        $validate = False;
+        }
 
-            $email_verification = "SELECT email from users WHERE email = '$email'";
-            $result1 = mysqli_query($conn, $email_verification);
-            $num = mysqli_num_rows($result1);
-                
-            if($num > 0)
+        if($validate)
+        {
+            $query = "SELECT password from users where name =?";
+
+            $st = mysqli_prepare($conn,$query);        
+            mysqli_stmt_bind_param($st,'s',$name);   
+            mysqli_stmt_execute($st);              
+            $result = mysqli_stmt_get_result($st); 
+    
+            $row = mysqli_fetch_assoc($result);
+            
+            if(mysqli_num_rows($result))
             {
-                $password_verification = "SELECT password from users WHERE password = '$password' AND name = '$name'";
-                $result2 = mysqli_query($conn, $password_verification);
-                $num1 = mysqli_num_rows($result2);
+                $hpw=hash('sha512',$password);
 
-                if($num1 > 0)
+                if($row['password'] == $hpw)
                 {
-                    
-                    $_SESSION['username'] = "$name";
-                    header("Location: http://localhost/dbms_crud_website/home.php");
+                    $_SESSION['username'] = $name;
+                    header('Location:home.php');
                 }
                 else
                 {
-                    $status['status'] = "Verify your credentials";
-                    $status_code['status_code'] = "error";
+                    $status['status'] = "Invalid Password";
+                    $status_code['status_code'] = "error";                
                 }
             }
             else
             {
-                $status['status'] = "Verify your email id";
-                $status_code['status_code'] = "error";
+                $status['status'] = "Not a registered user";
+                $status_code['status_code'] = "error";  
             }
+        }
+
+        
     }
-}
+
+    
+
   
 }
 
