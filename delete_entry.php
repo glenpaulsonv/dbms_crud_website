@@ -15,9 +15,7 @@
                 <div class="nav-links" id="nav-links-id">
                 <img src="assets/images/white_menu_icon.svg" width="30px" onclick="hideMenu()">
                     <ul>
-                        <li><a href="index.php">Home</a></li>
-                        <li><a href="index.php">Services</a></li>                    
-                        <li><a href="index.php">Volunteer</a></li> 
+                        <li><a href="home.php">Home</a></li>                        
                         <li><a href="update_entry.php">Update</a></li> 
                         <li><a href="delete_entry.php">Delete</a></li>
                         <li><a href="log_out.php">Log Out</a></li>                         
@@ -84,9 +82,7 @@
             <div class="footer-desc">
                 <div class="footer-links" id="footer-links">
                     <ul>
-                        <li><a href="index.php">Home</a></li>
-                        <li><a href="index.php">Services</a></li>                    
-                        <li><a href="index.php">Volunteer</a></li> 
+                        <li><a href="home.php">Home</a></li>
                         <li><a href="update_entry.php">Update</a></li> 
                         <li><a href="delete_entry.php">Delete</a></li>
                         <li><a href="log_out.php">Log Out</a></li>                         

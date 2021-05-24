@@ -51,7 +51,7 @@ else
                     {
                     
                     $_SESSION['username'] = "$name";
-                    header("Location: http://localhost/dbms_crud_website/index.php");
+                    header("Location: http://localhost/dbms_crud_website/home.php");
                     }
                     else
                     {

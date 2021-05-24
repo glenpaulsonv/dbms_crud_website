@@ -16,9 +16,7 @@
                 <div class="nav-links" id="nav-links">
                 
                     <ul>
-                        <li><a href="#hero-section">Home</a></li>
-                        <li><a href="#service-section">Services</a></li>                    
-                        <li><a href="#volunteer-section">Volunteer</a></li> 
+                        <li><a href="home.php">Home</a></li>                        
                         <li><a href="update_entry.php">Update</a></li> 
                         <li><a href="delete_entry.php">Delete</a></li>
                         <li><a href="log_out.php">Log Out</a></li>                         
@@ -80,9 +78,7 @@
                 <div class="footer-desc">
                     <div class="footer-links" id="footer-links">
                         <ul>
-                            <li><a href="home.php">Home</a></li>
-                            <li><a href="home.php">Services</a></li>                    
-                            <li><a href="home.php">Volunteer</a></li> 
+                            <li><a href="home.php">Home</a></li>                            
                             <li><a href="update_entry.php">Update</a></li> 
                             <li><a href="delete_entry.php">Delete</a></li>
                             <li><a href="log_out.php">Log Out</a></li>                         
