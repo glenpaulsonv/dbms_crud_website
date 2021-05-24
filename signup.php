@@ -1,5 +1,13 @@
 <?php
 
+session_start();
+if(isset($_SESSION['username']))
+{    
+    header("Location: http://localhost/dbms_crud_website/home.php");
+}
+else
+{
+   
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -30,8 +38,8 @@ else
                 
                 if($num> 0)
                 {
-                    $_SESSION['status'] = "Email Already Exists";
-                    $_SESSION['status_code'] = "error"; 
+                    $status['status'] = "Email Already Exists";
+                    $status_code['status_code'] = "error"; 
                 }
                 else
                 {
@@ -41,23 +49,27 @@ else
 
                     if($result)
                     {
-                    session_start();
+                    
                     $_SESSION['username'] = "$name";
                     header("Location: http://localhost/dbms_crud_website/index.php");
                     }
                     else
                     {
-                        $_SESSION['status'] = "Try Again Later";
-                        $_SESSION['status_code'] = "error";
+                        $status['status'] = "Try Again Later";
+                        $status_code['status_code'] = "error";
        
                     }
                 }
             }
             else
             {
-                $_SESSION['status'] = "Passwords didn't match";
-                $_SESSION['status_code'] = "error";
+                $status['status'] = "Passwords didn't match";
+                $status_code['status_code'] = "error";
             }
     }
 }
-    ?>
+
+
+}
+
+?>

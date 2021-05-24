@@ -3,15 +3,11 @@
 session_start();
 if(isset($_SESSION['username']))
 {    
-    $status['status'] = "Already in Session";
-    $status_code['status_code'] = "success";
+    header("Location: http://localhost/dbms_crud_website/home.php");
 }
 else
-{
-    session_unset();
-    session_destroy();
-    header("Location: http://localhost/dbms_crud_website/log_out.php");
-}
+{    
+
 
 
 $servername = "localhost";
@@ -64,4 +60,7 @@ else
             }
     }
 }
-    ?>
+  
+}
+
+?>
