@@ -6,16 +6,15 @@ if(isset($_SESSION['username']))
     
     include 'connectdb2.php';
 
+    $dispCategory = mysqli_real_escape_string($conn,$_SESSION['category']);
+    $querys = "SELECT * FROM volunteers WHERE category =?";
 
-                $dispCategory = mysqli_real_escape_string($conn,$_SESSION['category']);
-                $querys = "SELECT * FROM volunteers WHERE category =?";
+    $st = mysqli_prepare($conn,$querys);        
+    mysqli_stmt_bind_param($st,'s',$_SESSION['category']);   
+    mysqli_stmt_execute($st);              
+    $result = mysqli_stmt_get_result($st); 
 
-                $st = mysqli_prepare($conn,$querys);        
-                mysqli_stmt_bind_param($st,'s',$_SESSION['category']);   
-                mysqli_stmt_execute($st);              
-                $result = mysqli_stmt_get_result($st);                 
-
-                $users = mysqli_fetch_all($result, MYSQLI_ASSOC);
+    $users = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
                 //$filename = $row['name'];
 
