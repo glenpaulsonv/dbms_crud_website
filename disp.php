@@ -17,6 +17,20 @@ if(isset($_SESSION['username']))
 
                 $users = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
+                //$filename = $row['name'];
+
+                /*
+                $images_sql = "SELECT * from volunteers";
+                
+                $result = mysqli_query($conn,$querys);
+                
+                $row = mysqli_fetch_array($result);               
+                
+                $image = $row['vol_image'];*/
+                  
+
+
+
 }
 else
 {

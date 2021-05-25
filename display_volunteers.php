@@ -34,13 +34,14 @@
                         <div class="element element-2">
                             <img src="assets/images/b3.png">
                         </div> 
-                        <div class="element element-3">
-                            <img src="assets/images/top_2.png">
-                        </div>  
+                        
                 </div>  
 
                 <div class="domain-row">
-                    <?php include 'cards.php' ?>
+
+                <?php include 'cards.php' ?>
+                
+                        
                 </div>
         </section>
 

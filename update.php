@@ -47,7 +47,7 @@ if(isset($_SESSION['username']))
                         $query2 = "UPDATE volunteers SET password=?, category=?, portfolio=?, contact=?  WHERE name=?";                        
                         
                         $st2 = mysqli_prepare($conn,$query2);                     
-                        mysqli_stmt_bind_param($st2,'sssss',$hpwnew,$new_category,$new_portfolio,$new_contact,$nam);
+                        mysqli_stmt_bind_param($st2,'sssss',$hpwnew,$new_category,$new_portfolio,$new_contact,$name);
                         $result2 = mysqli_stmt_execute($st2);
                     
                         if($result2)
@@ -69,7 +69,7 @@ if(isset($_SESSION['username']))
                 }
                 else
                 {
-                    $status['status'] = "Not a registered volunteer";
+                    $status['status'] = "Verify your details";
                     $status_code['status_code'] = "error";  
                 }
             }  

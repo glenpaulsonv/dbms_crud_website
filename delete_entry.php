@@ -49,12 +49,6 @@
                             <input class="form-control" type="password" name="password" required="required">
                             <span>Password</span>
                         </div>
-
-                        <div class="inputBox">
-                            <input class="form-control" type="text" name="email_id" required="required">
-                            <span>Email</span>
-                        </div>
-
     
                         <div class="inputBox">
                             <input class="form-control" type="submit" name="delete" value="Delete">
