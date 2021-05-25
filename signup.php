@@ -62,8 +62,10 @@ else
                     
                     if($result2)
                     {
+                        $_SESSION['username'] = $name;
                         $status['status'] = "User Registered";
                         $status_code['status_code'] = "success";
+                        header('Location:home.php');
                     }
         
                 }

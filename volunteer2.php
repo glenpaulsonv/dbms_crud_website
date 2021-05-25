@@ -60,25 +60,17 @@ if(isset($_SESSION['username']))
             if($validate)
             {
 
-                $query = "SELECT password from volunteers where name =?";
+                $profileImageName = time()  .'_'. $_FILES['volunteer_image']['name'];
+                $target = 'images/' . $profileImageName;
 
-                $img_name = $_FILES['volunteer_image']['name'];
-                $target_dir = "images/";
-                $target_file = $target_dir . basename($_FILES["volunteer_image"]["name"]);
-      
-                // Select file type
-                $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 
-                $image_base64 = base64_encode(file_get_contents($_FILES['volunteer_image']['tmp_name']) );
-                $image = 'data:image/'.$imageFileType.';base64,'.$image_base64;
-         
+                $query = "SELECT password from volunteers where name =?";                
         
                 $st = mysqli_prepare($conn,$query);
                 mysqli_stmt_bind_param($st,'s',$name);
                 mysqli_stmt_execute($st);
                 $result = mysqli_stmt_get_result($st);
-
-                echo mysqli_num_rows($result);
+                
 
                 if(mysqli_num_rows($result)>0)
                 {
@@ -89,24 +81,30 @@ if(isset($_SESSION['username']))
 
                 else
                 {
-                    $query2 = "INSERT INTO volunteers(name,password,category,portfolio,contact,email,vol_img) VALUES (?,?,?,?,?,?,?)";
-                    $st2 = mysqli_prepare($conn,$query2);
+                    if(move_uploaded_file($_FILES['volunteer_image']['tmp_name'], $target))
+                    {
+                        $query2 = "INSERT INTO volunteers (name,password,category,portfolio,contact,email,vol_image) VALUES (?,?,?,?,?,?,?)";
+                        $st3 = mysqli_prepare($conn,$query2);
 
-                    $hpw = hash('sha512',$password);
+                        $hpw = hash('sha512',$password);
             
-                    mysqli_stmt_bind_param($st2,'sssssss',$password,$hpw,$category,$portfolio,$contact,$email,$image);
-                    $result2 = mysqli_stmt_execute($st2);
+                        mysqli_stmt_bind_param($st3,'sssssss',$name,$hpw,$category,$portfolio,$contact,$email,$profileImageName);
+                        $result2 = mysqli_stmt_execute($st3);
+                        if($result2)
+                        {
+                            $status['status'] = "Registered";
+                            $status_code['status_code'] = "success";
+                        }
+                        else
+                        {
+                            $status['status'] = "Try again later";
+                            $status_code['status_code'] = "error";
+                        }
+
+                    }
+                    
             
-                    if($result2)
-                    {
-                        $status['status'] = "Registered";
-                        $status_code['status_code'] = "success";
-                    }
-                    else
-                    {
-                        $status['status'] = "Try again later;
-                        $status_code['status_code'] = "error";
-                    }
+                    
 
                 }
             }
@@ -122,7 +120,7 @@ else
 {
     session_unset();
     session_destroy();
-    header("Location: http://localhost/dbms_crud_website/log_out.php");
+    header("Location:log_out.php");
 }
 
 

@@ -3,7 +3,7 @@
 session_start();
 if(isset($_SESSION['username']))
 {    
-    header("Location: http://localhost/dbms_crud_website/home.php");
+    header("Location: home.php");
 }
 else
 {    
@@ -13,6 +13,7 @@ else
     if(isset($_POST['sign-in']))
     {
         include 'connectdb1.php';
+
         $name = mysqli_real_escape_string($conn,$_POST['name']);
         $password = mysqli_real_escape_string($conn,$_POST['password']);        
         
@@ -34,20 +35,23 @@ else
     
             $row = mysqli_fetch_assoc($result);
             
-            if(mysqli_num_rows($result))
+            if(mysqli_num_rows($result))          
             {
-                $hpw=hash('sha512',$password);
-
-                if($row['password'] == $hpw)
+                $hpw=hash('sha512',$password);          
+            
+                if($row['password'] == $hpw)          
                 {
+                
                     $_SESSION['username'] = $name;
                     header('Location:home.php');
+
                 }
                 else
                 {
                     $status['status'] = "Invalid Password";
-                    $status_code['status_code'] = "error";                
-                }
+                    $status_code['status_code'] = "error";
+                
+                }            
             }
             else
             {
