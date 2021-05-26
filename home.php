@@ -11,8 +11,11 @@
         
     </head>
     <body>
+
+    <!--------------------------------------------------------------Nav Bar--------------------------------------------------------------->
         
     <div class="nav-section">
+
                 <div class="nav-links" id="nav-links-id">
                 <img src="assets/images/white_menu_icon.svg" width="30px" onclick="hideMenu()">
                     <ul>
@@ -28,11 +31,9 @@
 
     </div>
         
-            <!----------------------------------------Home Section----------------------------------------------->
+    <!--------------------------------------------------------------Home Section------------------------------------------------------------>
         <section class="hero-section" id="hero-section">
-        
-            
-        
+      
 
             <div class="element-main">
                 <div class="element element-1">
@@ -60,7 +61,7 @@
            
         </section>
 
-        <!----------------------------------------Stages----------------------------------------------->
+    <!------------------------------------------------------------------Stages-------------------------------------------------------------->
 
         <section class="stages-section" id="stages-section">
             <h1 class="slide-in">Stages Involved</h1>
