@@ -1,4 +1,5 @@
 <?php include 'signin.php' ?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -9,6 +10,7 @@
         
     </head>
     <body>
+    <!------------------------------------------------------------Nav Bar------------------------------------------------------------------>   
     <div class="nav-section">
                 <div class="nav-links" id="nav-links-id">
                 <img src="assets/images/close_icon.svg" width="30px" onclick="hideMenu()">
@@ -19,7 +21,7 @@
                 <img src="assets/images/menu_icon.svg" width="30px" onclick="showMenu()"> 
 
     </div>
-    <!------------------------------------------------------------sign-in section------------------------------------------------->
+    <!------------------------------------------------------------sign-in section----------------------------------------------------------->
     <section class="sign-in-section">
 
         <div class="element-main">            
@@ -36,7 +38,7 @@
                 <form action="sign_in.php" method="post">
                         <h2>Sign In</h2>
                         <div class="inputBox ">
-                            <input class="form-control" type="text" name="name" required="required">
+                            <input class="form-control" type="text" name="name" required="required" maxlength="30">
                             <span>User Name</span>
                         </div>
     
@@ -58,7 +60,7 @@
         </div>
             
     </section>
-    <!----------------------------------------Footer----------------------------------------------->
+    <!-----------------------------------------------------------------Footer--------------------------------------------------------------->
 
     <section class="footer">
             
@@ -100,7 +102,7 @@
         </script>    
 
 
-    <!------------------------------------------Sweet Alert--------------------------------------------------->
+    <!--------------------------------------------------------------------Sweet Alert-------------------------------------------------------------->
             <script src="js/sweetalert.min.js"></script>        
 
             <?php

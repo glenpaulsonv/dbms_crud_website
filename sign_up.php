@@ -11,6 +11,8 @@
     </head>
     <body>
 
+    <!------------------------------------------------------------Nav Bar------------------------------------------------------------------>
+
     <div class="nav-section">
                 <div class="nav-links" id="nav-links-id">
                 <img src="assets/images/close_icon.svg" width="30px" onclick="hideMenu()">
@@ -21,7 +23,7 @@
                 <img src="assets/images/menu_icon.svg" width="30px" onclick="showMenu()"> 
 
     </div>
-    <!------------------------------------------------------------sign-in section------------------------------------------------->
+    <!---------------------------------------------------------------------sign-in section--------------------------------------------------->
     <section class="sign-in-section">
 
         <div class="element-main">            
@@ -37,12 +39,12 @@
                         <form action="sign_up.php" method="post">
                         <h2>Sign Up</h2>
                         <div class="inputBox ">
-                            <input class="form-control" type="text" name="name" required="required">
+                            <input class="form-control" type="text" name="name" required="required" maxlength="30">
                             <span>User Name</span>
                         </div>
 
                         <div class="inputBox ">
-                            <input class="form-control" type="text" name="email_id" required="required">
+                            <input class="form-control" type="text" name="email_id" required="required" maxlength="70">
                             <span>Email Id</span>
                         </div>
     

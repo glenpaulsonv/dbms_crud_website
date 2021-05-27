@@ -88,7 +88,7 @@
 
         
 
-        <!----------------------------------------Services----------------------------------------------->
+        <!------------------------------------------------------------------Services------------------------------------------------------------>
 
         <section class="service-section" id="service-section">
 
@@ -98,19 +98,21 @@
 
             <div class="row-services slide-in">
                 <div class="service-col">
-                <a href="display_volunteers.php"><img src="assets/images/uiux.png"><?php $_SESSION['category']="UI UX Design"; ?></a>                    
+                <a href="display_volunteers.php?id=UI UX Design"><img src="assets/images/uiux.png" id="UI UX Design"></a>                                    
                     <h3>UI UX Design</h3>
                     <p>We've a bunch of freelance designers to show you the behind the scenes</p>
                 </div>
 
-                <div class="service-col">                
-                <a href="display_volunteers.php"><img src="assets/images/web_dev.png"><?php $_SESSION['category']="Web Dev"; ?></a>                     
+                <div class="service-col"> 
+                <a href="display_volunteers.php?id=Web Dev"><img src="assets/images/web_dev.png" id="Web Dev"></a>             
+                                
                     <h3>Web Dev</h3>
                     <p>Industry Professionals with real time project sessions</p>
                 </div>
 
-                <div class="service-col">                
-                <a href="display_volunteers.php"><img src="assets/images/app.png"><?php $_SESSION['category']="Mobile App Dev"; ?></a>                   
+                <div class="service-col">
+                <a href="display_volunteers.php?id=Mobile App Dev"><img src="assets/images/app.png" id="Mobile App Dev"></a>                 
+                                 
                     <h3>Mobile App Dev</h3>
                     <p>We're proud to have one of the top instructors on Flutter</p>
                 </div>
@@ -119,20 +121,22 @@
             </div>
 
             <div class="row-services slide-in">
-                <div class="service-col">                
-                <a href="display_volunteers.php"><img src="assets/images/Logo Design.png"><?php $_SESSION['category']="Logo Design"; ?></a>  
+                <div class="service-col">
+                <a href="display_volunteers.php?id=Logo Design"><img src="assets/images/Logo Design.png" id="Logo Design"></a>                 
+                
                     <h3>Logo Design</h3>
                     <p>We've a bunch of freelance designers to show you the behind the scenes</p>
                 </div>
 
                 <div class="service-col">
-                <a href="display_volunteers.php"><img src="assets/images/illustration_2.png"><?php $_SESSION['category']="Illustrations"; ?></a>                                   
+                <a href="display_volunteers.php?id=Illustrations"><img src="assets/images/illustration_2.png" id="Illustrations"></a>  
+                                                  
                     <h3>Illustrations</h3>
                     <p>Industry Professionals with real time project sessions</p>
                 </div>
 
                 <div class="service-col">
-                <a href="display_volunteers.php"><img src="assets/images/brand.png"><?php $_SESSION['category']="Brand Identity"; ?></a>                                    
+                <a href="display_volunteers.php?id=Brand Identity"><img src="assets/images/brand.png" id="Brand Identity"></a>                                                     
                     <h3>Brand Identity</h3>
                     <p>We're proud to have one of the top instructors on Flutter</p>
                 </div>
@@ -144,7 +148,7 @@
 
         </section>
 
-        <!----------------------------------------Volunteer----------------------------------------------->
+        <!---------------------------------------------------------------Volunteer-------------------------------------------------------------->
 
         <section class="volunteer-section" id="volunteer-section">
 
@@ -170,7 +174,7 @@
                             <h2>Volunteer</h2>
 
                             <div class="input-box">
-                                <input class="form-control" type="text" name="name" required="required">
+                                <input class="form-control" type="text" name="name" required="required" maxlength="30">
                                 <span>Name</span>
                             </div>
     
@@ -201,17 +205,17 @@
                             
 
                             <div class="input-box">
-                                <input class="form-control" type="text" name="portfolio_link" required="required">
+                                <input class="form-control" type="text" name="portfolio_link" required="required" maxlength="70">
                                 <span>Portfolio Link</span>
                             </div>
 
                             <div class="input-box">
-                                <input class="form-control" type="text" name="contact" required="required">
+                                <input class="form-control" type="text" name="contact" required="required" maxlength="10">
                                 <span>Contact</span>
                             </div>
 
                             <div class="input-box">
-                                <input class="form-control" type="text" name="email_id" required="required">
+                                <input class="form-control" type="text" name="email_id" required="required" maxlength="70">
                                 <span>Email Id</span>
                             </div>
 
@@ -232,7 +236,7 @@
             </div>
         </section>
 
-        <!----------------------------------------Testimonial----------------------------------------------->
+        <!--------------------------------------------------------------Testimonial----------------------------------------------------------->
 
         <section class="testimonial-section">
 
@@ -261,7 +265,7 @@
 
         </section>
 
-        <!----------------------------------------Footer----------------------------------------------->
+        <!-------------------------------------------------------------------Footer------------------------------------------------------------>
 
         <section class="footer">
             
@@ -306,7 +310,7 @@
             }
         </script>
 
-        <!----------------------------------------Scroll Reveal Script------------------------------------------------>
+        <!----------------------------------------------------------Scroll Reveal Script---------------------------------------------------------->
         
         
 
