@@ -11,14 +11,14 @@ if(isset($_SESSION['username']))
             include 'connectdb2.php';
 
             $name = mysqli_real_escape_string($conn,$_POST['name']);
-            $email = mysqli_real_escape_string($conn,$_POST['email_id']);
+            $new_email = mysqli_real_escape_string($conn,$_POST['email_id']);
             $password = mysqli_real_escape_string($conn,$_POST['old_password']);
             $new_password = mysqli_real_escape_string($conn,$_POST['new_password']);
             $new_category = mysqli_real_escape_string($conn,$_POST['new_category']); 
             $new_portfolio = mysqli_real_escape_string($conn,$_POST['new_portfolio_link']);
             $new_contact = mysqli_real_escape_string($conn,$_POST['new_contact']);
 
-            if($name=='' OR $email=='' OR $password=='' OR $new_password=='' OR $new_category=='' OR $new_portfolio=='' OR $new_contact=='')
+            if($name=='' OR $new_email=='' OR $password=='' OR $new_password=='' OR $new_category=='' OR $new_portfolio=='' OR $new_contact=='')
             {
             $status['status'] = "Enter all details";
             $status_code['status_code'] = "error";
@@ -44,10 +44,10 @@ if(isset($_SESSION['username']))
                     if($row['password'] == $hpw)
                     {
                         $hpwnew = hash('sha512',$new_password);
-                        $query2 = "UPDATE volunteers SET password=?, category=?, portfolio=?, contact=?  WHERE name=?";                        
+                        $query2 = "UPDATE volunteers SET password=?, category=?, email=?, portfolio=?, contact=?  WHERE name=?";                        
                         
                         $st2 = mysqli_prepare($conn,$query2);                     
-                        mysqli_stmt_bind_param($st2,'sssss',$hpwnew,$new_category,$new_portfolio,$new_contact,$name);
+                        mysqli_stmt_bind_param($st2,'ssssss',$hpwnew,$new_category,$new_email,$new_portfolio,$new_contact,$name);
                         $result2 = mysqli_stmt_execute($st2);
                     
                         if($result2)

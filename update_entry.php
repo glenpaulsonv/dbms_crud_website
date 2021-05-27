@@ -44,12 +44,8 @@
                         <div class="inputBox ">
                             <input class="form-control" type="text" name="name" required="required">
                             <span>Name</span>
-                        </div>
+                        </div>                       
                         
-                        <div class="inputBox ">
-                            <input class="form-control" type="text" name="email_id" required="required">
-                            <span>Email Id</span>
-                        </div>
     
                         <div class="inputBox">
                             <input class="form-control" type="password" name="old_password" required="required">
@@ -59,6 +55,11 @@
                         <div class="inputBox">
                             <input class="form-control" type="password" name="new_password" required="required">
                             <span>New Password</span>
+                        </div>
+
+                        <div class="inputBox ">
+                            <input class="form-control" type="text" name="email_id" required="required">
+                            <span>New Email Id</span>
                         </div>
 
                         <div class="selection">
