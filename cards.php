@@ -4,7 +4,7 @@
 <div class="volunteer_card">
        <div class="volunteer_content">
                <div class="volunteer_img">
-               <img src="images/<?php echo $user['vol_image']; ?>" />
+               <img src="upload/<?php echo $user['img_name']; ?>" />
                </div>
 
                <div class="volunteer_desc">

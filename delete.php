@@ -40,7 +40,7 @@ if(isset($_SESSION['username']))
                     {
                         $query = "DELETE from volunteers WHERE name=? AND password=?";
                         
-                        $st2 = mysqli_prepare($conn,$query2);                     
+                        $st2 = mysqli_prepare($conn,$query);                     
                         mysqli_stmt_bind_param($st2,'ss',$name,$hpw);
                         $result2 = mysqli_stmt_execute($st2);
                     
