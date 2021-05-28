@@ -433,7 +433,7 @@
     margin-top: 12px;
 }
 
-.selection-control
+.volunteer-form .selection-control
 {
     fill: none;
     background-color: transparent;
@@ -576,12 +576,29 @@ input{
 
 }
 
+.sign-in-form .selection-control
+{
+    fill: none;
+    background-color: transparent;
+    border: none;
+    width: 100%;
+    color: #353535;
+    border-bottom: 2px solid #cfcfcf;
+
+    
+    padding: 5px 0;
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+
 .sign-in-form .inputBox{
     position: relative;
     width: 100%;
     margin-top: 10px;
     
 }
+
 
 
 .sign-in-form .inputBox input
