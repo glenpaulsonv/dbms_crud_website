@@ -223,6 +223,32 @@
     width: 100%;
 }
 
+@media(max-width: 1440px)
+{
+    .element-1
+    {
+        left: 22%;
+        bottom: 5%; 
+    }
+    .element-2
+    {
+        left:2%;
+        bottom: -28%;
+    }
+}
+
+@media(max-width: 1200px)
+{
+    .element-3
+    {
+        display: none;
+        
+    }
+    .row{
+        flex-direction: column;
+    }
+}
+
 @media(max-width: 700px)
 {
     .element-1{
@@ -278,6 +304,7 @@
     flex-basis: 33%;
     
     display: flex;
+    
     flex-direction: column;
     align-items: center;
     text-align: center;
@@ -342,6 +369,8 @@
 .service-col img{
     width: 100%;
 }
+
+
 
 @media(max-width: 700px)
 {
